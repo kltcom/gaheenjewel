@@ -37,3 +37,76 @@
     color: #000;
     padding: 0.2em 0;
 }
+
+a {outline: none !important; border: none !important;}
+.center {text-align: center;}
+.none {display: none;}
+
+.default-header {
+	text-transform: uppercase;
+	text-align: center;
+	color: #2f3c4e;
+	}
+	
+.seperator-1 {
+	border-bottom: 2px solid #ecedee;
+	margin-bottom: 35px;
+	}
+	
+.input-icon-overlay {
+	color: #a3a9b0;
+}
+
+.help-block {
+	background-color: #f6f6f6;
+}
+
+/*Navigation Bar */
+.main-nav {
+	height: 75px;
+	border-bottom: 1px solid #b8bcbf;
+	box-shadow: #b8bcbf;
+}
+
+.nav-search {}
+
+.navbar-brand {
+	color: #24c668;
+    font-size: 2em;
+    font-weight: 600;
+    margin-left: -15px;
+    text-transform: uppercase;
+}
+
+/*Registration*/
+.input-group-addon {
+	border-right: none;
+	background-color: #f6f6f6;
+	border-color: #e4e6e8;
+}
+	
+.input-styles {
+	border-left: none !important;
+	background-color: #f6f6f6;
+	box-shadow: none !important;
+	border-color: #e4e6e8;
+}
+
+.form-control:focus {
+	border-color: #e4e6e8 !important;
+}
+
+.registration-form form  {
+	width: 55%;
+	margin: 35px auto !important;
+}
+
+
+.btn-login, .btn-register, .btn-continue {text-transform: uppercase;}
+.btn-continue {
+	margin-top: 25px;
+	}
+	
+
+
+

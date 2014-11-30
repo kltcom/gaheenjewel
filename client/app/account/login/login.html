@@ -1,36 +1,48 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<h1>Login</h1>
-			<p>Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-			<p>Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
+
+<div class="seperator-1">
+			<h1 class="default-header">Login</h1>
 		</div>
-		<div class="col-sm-12">
-			<form class="form" name="form" ng-submit="commit(form)" novalidate>
-				<div class="form-group">
-					<label>E-mail</label>
-					<input type="email" name="email" class="form-control" ng-model="user.email" required>
-				</div>
-				<div class="form-group">
-					<label>Password</label>
-					<input type="password" name="password" class="form-control" ng-model="user.password" required>
-				</div>
-				<div class="form-group has-error">
-					<p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && submitted">
-						Please enter your e-mail and password.
-					</p>
-					<p class="help-block" ng-show="form.email.$error.email && submitted">
-						Invalid e-mail.
-					</p>
-					<p class="help-block">{{ errors.other }}</p>
-				</div>
-				<div>
-					<button class="btn btn-inverse btn-lg btn-login" type="submit">Login</button>
-					<a class="btn btn-default btn-lg btn-register" href="/signup">Register</a>
-				</div>
-			</form>
+	
+		<div class="container">
+			
+			<p class="none">Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
+			<p class="none">Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
 		</div>
-	</div>
+        
+        <div class="container registration-form">
+            <div class="col-sm-12">
+                <form class="form" name="form" ng-submit="commit(form)" novalidate>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label class="sr-only" for="email">E-mail</label>
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-user input-icon-overlay"></span></div>
+                            <input type="email" name="email" placeholder="Email" class="form-control input-styles" ng-model="user.email" required>
+                            </div><!-- input group -->
+                    </div><!-- form group -->
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label class="sr-only" for="password">Password</label>
+                            <div class="input-group-addon"><span class="glyphicon glyphicon-eye-close input-icon-overlay"></span></div>
+                            <input type="password" name="password" placeholder="Password" class="form-control input-styles" ng-model="user.password" required>
+                        </div><!-- input group -->
+                    </div><!-- form group -->
+                    <div class="form-group has-error">
+                        <p class="help-block" ng-show="form.email.$error.required && form.password.$error.required && submitted">
+                            Please enter your e-mail and password.
+                        </p>
+                        <p class="help-block" ng-show="form.email.$error.email && submitted">
+                            Invalid e-mail.
+                        </p>
+                        <p class="help-block">{{ errors.other }}</p>
+                    </div>
+                    <div class="center">
+                        <button class="btn btn-danger btn-lg btn-login" type="submit">Login</button>
+                        <a class="btn btn-success btn-lg btn-register" href="/signup">Register</a>
+                    </div>
+                </form>
+            </div>
+	</div><!-- container -->
 	<hr>
 </div>

@@ -1,24 +1,34 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="container">
-	<div class="row">
-		<div class="col-sm-12">
-			<h1>My Account</h1>
+	
+		<div class="seperator-1">
+			<h1 class="default-header">Gaheen Jewel User Sign Up</h1>
 		</div>
-		<div class="col-sm-12">
+        
+        <div class="col-sm-12">
+        	<h4 class="lead center">Which of the following do you consider yourself?</h4>
+         </div>
+		<div class="container registration-form">
+        	<div class="col-sm-12">
 			<form class="form" name="form" ng-submit="commit(form)" novalidate>
 				<div class="form-group">
-					<label>Type</label>
-					<select name="type" class="form-control" ng-init="user.type = 'patient'" ng-model="user.type">
-						<option value="dispensary">Dispensary</option>
-						<option value="manufacturer">Manufacturer</option>
-						<option value="patient">Patient</option>
-						<option value="physician">Physician</option>
-						<option value="purveyor">Purveyor</option>
-					</select>
-				</div>
+                    <div class="input-group">
+                        <label class="sr-only" for="type">Type</label>
+                         <div class="input-group-addon"><span class="glyphicon glyphicon-user input-icon-overlay"></span></div>
+                        <select name="type" class="form-control input-styles" ng-init="user.type = 'patient'" ng-model="user.type">
+                            <option value="dispensary">Dispensary</option>
+                            <option value="manufacturer">Manufacturer</option>
+                            <option value="patient">Patient</option>
+                            <option value="physician">Physician</option>
+                            <option value="purveyor">Purveyor</option>
+                        </select>
+                    </div>
+                 </div><!-- input group -->
 				<p class="help-block"> {{ message }}</p>
-				<button class="btn btn-lg btn-primary" type="submit">Continue</button>
+				<div class="center">
+                	<button class="btn btn-lg btn-danger btn-continue" type="submit">Save &amp; Continue</button>
+                 </div><!-- center -->
 			</form>
-		</div>
-	</div>
-</div>
+		</div><!-- col-sm-12-->
+	</div><!-- container -->
+</div><!-- container -->
