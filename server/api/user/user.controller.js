@@ -4,6 +4,19 @@ var User = require('./user.model');
 var passport = require('passport');
 var config = require('../../config/environment');
 var jwt = require('jsonwebtoken');
+var Verificationtoken = require('../verificationToken/verificationToken.model');
+var tokenController = require('../verificationToken/verificationToken.controller');
+var nodemailer = require('nodemailer');
+var ses = require('nodemailer-ses-transport');
+var exphbs = require('express-handlebars');
+var hbs = require('nodemailer-express-handlebars');
+
+var transporter = nodemailer.createTransport(ses({
+	accessKeyId: config.aws_credentials.accessKeyId,
+	secretAccessKey: config.aws_credentials.secretAccessKey,
+	region: 'us-east-1'
+}));
+transporter.use('compile', hbs({viewPath: config.root + '/server/views'}));
 
 var validationError = function (res, err) {
 	return res.json(422, err);
@@ -29,6 +42,26 @@ exports.create = function (req, res, next) {
 	user.role = 'user';
 	user.save(function (err, user) {
 		if (err) return validationError(res, err);
+		var verificationToken = new Verificationtoken({_userId:user._id});
+		tokenController.createVerificationToken(verificationToken, function(err, token){
+			if (err) return console.log("Couldn't create verification token", err);
+			console.log('success' + token);
+			var mail = {
+				from: 'satnam@hcprtc.com',
+				to: 'satnamsjarria@gmail.com',
+				subject: 'verify your email',
+				template: 'welcome',
+				context: {
+					token: token,
+					email: user.email
+				}
+			}
+			transporter.sendMail(mail, function(err){
+			  if(err) console.log(err);
+			  else
+			    console.log('success');
+			});
+		});
 		var token = jwt.sign({_id: user._id}, config.secrets.session, {expiresInMinutes: 60 * 5});
 		res.json({token: token});
 	});

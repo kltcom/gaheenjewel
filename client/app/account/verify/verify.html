@@ -1,10 +1,9 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div class="container">
-	
+<div class="container" ng-show="getCurrentUser().verified">
+
 		<div class="seperator-1">
 			<h1 class="default-header">Gaheen Jewel User Sign Up</h1>
 		</div>
-        
         <div class="col-sm-12">
         	<h4 class="lead center">Which of the following do you consider yourself?</h4>
          </div>
@@ -32,3 +31,13 @@
 		</div><!-- col-sm-12-->
 	</div><!-- container -->
 </div><!-- container -->
+<div class="container" ng-show="!getCurrentUser().verified">
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2">
+			<div class="alert alert-success" role="alert">
+				Welcome! Check your inbox for instructions to verify your email and then come back to
+				complete next steps.
+			</div>
+		</div>
+	</div>
+</div>

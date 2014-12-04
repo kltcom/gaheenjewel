@@ -28,7 +28,11 @@ var userSchema = new Schema({
 	state: String,
 	zipCode: Number,
 	prescriptions: Array,
-	medicalConditions: Array
+	medicalConditions: Array,
+	verified:{
+		type: Boolean,
+		default:false
+	}
 });
 
 /**

@@ -28,7 +28,11 @@ var all = {
   secrets: {
     session: 'gaheen-secret'
   },
-
+	// Amazon ses token and key
+	aws_credentials:{
+		accessKeyId: 'AKIAIRCTBP6WYIV5VEVA',
+		secretAccessKey: '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'
+	},
   // List of user roles
   userRoles: ['guest', 'user', 'admin'],
 

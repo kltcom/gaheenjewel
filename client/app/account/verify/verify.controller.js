@@ -1,6 +1,7 @@
 'use strict';
 
 angular.module('gaheenApp').controller('VerifyCtrl', function ($scope, Auth, $location) {
+	$scope.getCurrentUser = Auth.getCurrentUser;
 	$scope.commit = function (form) {
 		$scope.submitted = true;
 		if (form.$valid) {

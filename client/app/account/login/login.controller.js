@@ -10,7 +10,10 @@ angular.module('gaheenApp').controller('LoginCtrl', function ($scope, Auth, $loc
 				email: $scope.user.email,
 				password: $scope.user.password
 			}).then(function () {
-				$location.path('/');
+				if(Auth.getCurrentUser.verified)
+					$location.path('/');
+				else
+					$location.path('/verify');
 			}).catch(function (err) {
 				$scope.errors.other = err.message;
 			});
