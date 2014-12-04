@@ -1,18 +1,22 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-<div class="container">
 
-<div class="seperator-1">
-			<h1 class="default-header">Login</h1>
-		</div>
-	
-		<div class="container">
-			
-			<p class="none">Accounts are reset on server restart from <code>server/config/seed.js</code>. Default account is <code>test@test.com</code> / <code>test</code></p>
-			<p class="none">Admin account is <code>admin@admin.com</code> / <code>admin</code></p>
-		</div>
+<div class="container">
+	<div class="col-sm-offset-3 col-sm-6 center white-bg layered-paper">
+    	<h1 class="default-header">Login</h1>
         
-        <div class="container registration-form">
-            <div class="col-sm-12">
+        <div class="onboarding-hr">
+        	<ul>
+            	<li></li>
+                <li></li>
+            </ul>
+        </div>
+    
+    
+  
+
+<div class="registration-form">
+
+<div class="col-sm-12">
                 <form class="form" name="form" ng-submit="commit(form)" novalidate>
                     <div class="form-group">
                         <div class="input-group">
@@ -36,13 +40,22 @@
                             Invalid e-mail.
                         </p>
                         <p class="help-block">{{ errors.other }}</p>
-                    </div>
-                    <div class="center">
-                        <button class="btn btn-danger btn-lg btn-login" type="submit">Login</button>
-                        <a class="btn btn-success btn-lg btn-register" href="/signup">Register</a>
-                    </div>
+                    </div> <!-- error form group -->
+                    
+                    
+                    
+                        <button class="btn btn-danger btn-login" type="submit">Login</button>
+                        <a class="btn btn-success btn-register" href="/signup">Register</a>
+                        
+                       
+                    
                 </form>
-            </div>
-	</div><!-- container -->
-	<hr>
-</div>
+            </div> <!-- sm-12 -->
+
+</div><!-- registration form -->
+
+</div><!-- col-sm-6-->
+
+</div><!-- container -->
+
+
