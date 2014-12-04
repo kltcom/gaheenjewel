@@ -3,32 +3,44 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var crypto = require('crypto');
+var _ = require('lodash');
 
 var userSchema = new Schema({
 	provider: String,
 	firstName: String,
 	lastName: String,
 	email: {
-		type: String,
-		lowercase: true
+		lowercase: true,
+		type: String
 	},
 	hashedPassword: String,
 	salt: String,
 	role: {
-		type: String,
-		default: 'user'
+		default: 'user',
+		type: String
 	},
 	type: {
-		type: String,
-		default: ''
+		default: '',
+		type: String
 	},
+	username: String,
 	address1: String,
 	address2: String,
 	city: String,
 	state: String,
 	zipCode: Number,
-	prescriptions: Array,
-	medicalConditions: Array,
+	medications: [
+		{
+			ref: 'Drug',
+			type: Schema.Types.ObjectId
+		}
+	],
+	medicalConditions: [
+		{
+			ref: 'MedicalCondition',
+			type: Schema.Types.ObjectId
+		}
+	],
 	verified:{
 		type: Boolean,
 		default:false
@@ -70,14 +82,9 @@ userSchema.virtual('name').get(function () {
  */
 
 	// E-mail is blank
-userSchema.path('email').validate(function (email) {
-	return email.length;
+userSchema.path('email').validate(function (value) {
+	return value.length;
 }, 'E-mail is required.');
-
-// Password is blank
-userSchema.path('hashedPassword').validate(function (hashedPassword) {
-	return hashedPassword.length;
-}, 'Password is required.');
 
 // E-mail already exists
 userSchema.path('email').validate(function (value, respond) {
@@ -92,16 +99,34 @@ userSchema.path('email').validate(function (value, respond) {
 	});
 }, 'E-mail already exists.');
 
-var validatePresenceOf = function (value) {
-	return value && value.length;
-};
+// Password is blank
+userSchema.path('hashedPassword').validate(function (value) {
+	return value.length;
+}, 'Password is required.');
+
+// Username already exists
+userSchema.path('username').validate(function (value, respond) {
+	if (_.isUndefined(value)) return respond(true);
+	var self = this;
+	this.constructor.findOne({username: value}, function (err, user) {
+		if (err) throw err;
+		if (user) {
+			if (self.id === user.id) return respond(true);
+			return respond(false);
+		}
+		respond(true);
+	});
+}, 'Username already exists.');
 
 /**
  * Pre-save hook
  */
 userSchema.pre('save', function (next) {
-	if (!this.isNew) return next();
-	if (!validatePresenceOf(this.hashedPassword)) next(new Error('Invalid password.'));
+	if (_.isEmpty(this.username)) this.username = undefined;
+	if (_.isEmpty(this.address2)) this.address2 = undefined;
+	if (_.isEmpty(this.medications)) this.medications = undefined;
+	if (_.isEmpty(this.medicalConditions)) this.medicalConditions = undefined;
+	if (_.isEmpty(this.hashedPassword) && this.isNew) next(new Error('Invalid password.'));
 	else next();
 });
 

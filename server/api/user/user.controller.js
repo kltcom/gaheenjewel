@@ -18,9 +18,9 @@ var transporter = nodemailer.createTransport(ses({
 }));
 transporter.use('compile', hbs({viewPath: config.root + '/server/views'}));
 
-var validationError = function (res, err) {
+function validationError(res, err) {
 	return res.json(422, err);
-};
+}
 
 /**
  * Get list of users
@@ -91,15 +91,41 @@ exports.destroy = function (req, res) {
 };
 
 /**
+ * Set a user's medical conditions
+ */
+exports.setMedicalConditions = function (req, res) {
+	var id = req.user._id;
+	User.findById(id, function (err, user) {
+		user.medicalConditions = req.body.medicalConditions;
+		user.save(function (err) {
+			if (err) return validationError(res, err);
+			res.send(200);
+		});
+	});
+};
+
+/**
+ * Set a user's medications
+ */
+exports.setMedications = function (req, res) {
+	var id = req.user._id;
+	User.findById(id, function (err, user) {
+		user.medications = req.body.medications;
+		user.save(function (err) {
+			if (err) return validationError(res, err);
+			res.send(200);
+		});
+	});
+};
+
+/**
  * Change a user's password
  */
-exports.changePassword = function (req, res, next) {
+exports.setPassword = function (req, res) {
 	var id = req.user._id;
-	var oldPassword = String(req.body.oldPassword);
-	var newPassword = String(req.body.newPassword);
 	User.findById(id, function (err, user) {
-		if (user.authenticate(oldPassword)) {
-			user.password = newPassword;
+		if (user.authenticate(req.body.oldPassword)) {
+			user.password = req.body.newPassword;
 			user.save(function (err) {
 				if (err) return validationError(res, err);
 				res.send(200);
@@ -112,11 +138,16 @@ exports.changePassword = function (req, res, next) {
 /**
  * Set a user's type
  */
-exports.setType = function (req, res, next) {
+exports.setType = function (req, res) {
 	var id = req.user._id;
-	var type = String(req.body.type);
 	User.findById(id, function (err, user) {
-		user.type = type;
+		user.type = req.body.type;
+		user.username = req.body.username;
+		user.address1 = req.body.address1;
+		user.address2 = req.body.address2;
+		user.city = req.body.city;
+		user.state = req.body.state;
+		user.zipCode = req.body.zipCode;
 		user.save(function (err) {
 			if (err) return validationError(res, err);
 			res.send(200);
@@ -131,7 +162,7 @@ exports.me = function (req, res, next) {
 	var id = req.user._id;
 	User.findOne({
 		_id: id
-	}, '-salt -hashedPassword', function (err, user) { // Don't ever give out the password or salt
+	}, '-salt -hashedPassword').populate('medications medicalConditions').exec(function (err, user) {
 		if (err) return next(err);
 		if (!user) return res.json(401);
 		res.json(user);

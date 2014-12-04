@@ -7,7 +7,7 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		/**
 		 * Authenticate user and save token
 		 *
-		 * @param  {Object}   user     - login info
+		 * @param  {Object}   user
 		 * @param  {Function} callback - optional
 		 * @return {Promise}
 		 */
@@ -43,9 +43,9 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		},
 
 		/**
-		 * Create a new user
+		 * Create a user
 		 *
-		 * @param  {Object}   user     - user info
+		 * @param  {Object}   user
 		 * @param  {Function} callback - optional
 		 * @return {Promise}
 		 */
@@ -63,7 +63,45 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		},
 
 		/**
-		 * Set password
+		 * Set a user's medical conditions
+		 *
+		 * @param  {Array}    medical conditions
+		 * @param  {Function} callback    - optional
+		 * @return {Promise}
+		 */
+		setMedicalConditions: function (medicalConditions, callback) {
+			var cb = callback || angular.noop;
+
+			return User.setMedicalConditions({id: currentUser._id}, {
+				medicalConditions: medicalConditions
+			}, function (user) {
+				return cb(user);
+			}, function (err) {
+				return cb(err);
+			}).$promise;
+		},
+
+		/**
+		 * Set a user's medications
+		 *
+		 * @param  {Array}    medications
+		 * @param  {Function} callback    - optional
+		 * @return {Promise}
+		 */
+		setMedications: function (medications, callback) {
+			var cb = callback || angular.noop;
+
+			return User.setMedications({id: currentUser._id}, {
+				medications: medications
+			}, function (user) {
+				return cb(user);
+			}, function (err) {
+				return cb(err);
+			}).$promise;
+		},
+
+		/**
+		 * Set a user's password
 		 *
 		 * @param  {String}   oldPassword
 		 * @param  {String}   newPassword
@@ -84,18 +122,16 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		},
 
 		/**
-		 * Set type
+		 * Set a user's type
 		 *
-		 * @param  {String}   type
+		 * @param  {Object}   user
 		 * @param  {Function} callback    - optional
 		 * @return {Promise}
 		 */
-		setType: function (type, callback) {
+		setType: function (user, callback) {
 			var cb = callback || angular.noop;
 
-			return User.setType({id: currentUser._id}, {
-				type: type
-			}, function (user) {
+			return User.setType({id: currentUser._id}, user, function (user) {
 				return cb(user);
 			}, function (err) {
 				return cb(err);
