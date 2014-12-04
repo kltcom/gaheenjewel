@@ -11,6 +11,7 @@ module.exports = function (app) {
 	// Routes
 	app.use('/api/drugs', require('./api/drug'));
 	app.use('/api/medicalconditions', require('./api/medicalcondition'));
+	app.use('/api/strains', require('./api/strain'));
 	app.use('/api/things', require('./api/thing'));
 	app.use('/api/users', require('./api/user'));
 	app.use('/auth', require('./auth'));

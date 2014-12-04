@@ -1,42 +1,130 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="container" ng-show="getCurrentUser().verified">
-
-		<div class="seperator-1">
-			<h1 class="default-header">Gaheen Jewel User Sign Up</h1>
-		</div>
-        <div class="col-sm-12">
-        	<h4 class="lead center">Which of the following do you consider yourself?</h4>
-         </div>
-		<div class="container registration-form">
-        	<div class="col-sm-12">
+	<div class="seperator-1">
+		<h1 class="default-header">Gaheen Jewel User Sign Up</h1>
+	</div>
+	<div class="col-sm-12">
+		<h4 class="lead center">Which of the following do you consider yourself?</h4>
+	</div>
+	<div class="container registration-form">
+		<div class="col-sm-12">
 			<form class="form" name="form" ng-submit="commit(form)" novalidate>
 				<div class="form-group">
-                    <div class="input-group">
-                        <label class="sr-only" for="type">Type</label>
-                         <div class="input-group-addon"><span class="glyphicon glyphicon-user input-icon-overlay"></span></div>
-                        <select name="type" class="form-control input-styles" ng-init="user.type = 'patient'" ng-model="user.type">
-                            <option value="dispensary">Dispensary</option>
-                            <option value="manufacturer">Manufacturer</option>
-                            <option value="patient">Patient</option>
-                            <option value="physician">Physician</option>
-                            <option value="purveyor">Purveyor</option>
-                        </select>
-                    </div>
-                 </div><!-- input group -->
+					<div class="input-group">
+						<label class="sr-only" for="type">Type</label>
+						<div class="input-group-addon"><span class="glyphicon glyphicon-user input-icon-overlay"></span></div>
+						<select name="type" class="form-control input-styles" ng-init="user.type = 'patient'" ng-model="user.type">
+							<option value="dispensary">Dispensary</option>
+							<option value="manufacturer">Manufacturer</option>
+							<option value="patient">Patient</option>
+							<option value="physician">Physician</option>
+							<option value="purveyor">Purveyor</option>
+						</select>
+					</div>
+					<!-- input group -->
+				</div>
+				<div class="form-group" ng-class="{
+						'has-success': form.username.$valid && submitted,
+						'has-error': form.username.$invalid && submitted
+					}">
+					<div class="input-group">
+						<label class="sr-only" for="username">Username</label>
+						<div class="input-group-addon"><span class="glyphicon glyphicon-user input-icon-overlay"></span></div>
+						<input type="text" name="username" placeholder="Username" class="form-control input-styles" ng-model="user.username" mongoose-error />
+						<p class="help-block" ng-show="form.username.$error.username && submitted">
+							Invalid username.
+						</p>
+						<p class="help-block" ng-show="form.username.$error.mongoose">
+							{{ errors.username }}
+						</p>
+					</div>
+					<!-- input group -->
+				</div>
+				<!-- form group -->
+				<div class="form-group" ng-class="{
+						'has-success': form.address1.$valid && submitted,
+						'has-error': form.address1.$invalid && submitted
+					}">
+					<div class="input-group">
+						<label class="sr-only" for="address1">Address 1</label>
+						<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+						<input type="text" name="address1" placeholder="Address 1" class="form-control input-styles" ng-model="user.address1" required />
+						<p class="help-block" ng-show="form.address1.$error.required && submitted">
+							Address 1 is required.
+						</p>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+						'has-success': form.address2.$valid && submitted,
+						'has-error': form.address2.$invalid && submitted
+					}">
+					<div class="input-group">
+						<label class="sr-only" for="address2">Address 2</label>
+						<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+						<input type="text" name="address2" placeholder="Address 2" class="form-control input-styles" ng-model="user.address2" />
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+						'has-success': form.city.$valid && submitted,
+						'has-error': form.city.$invalid && submitted
+					}">
+					<div class="input-group">
+						<label class="sr-only" for="city">City</label>
+						<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+						<input type="text" name="city" placeholder="City" class="form-control input-styles" ng-model="user.city" required />
+						<p class="help-block" ng-show="form.city.$error.required && submitted">
+							City is required.
+						</p>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+						'has-success': form.state.$valid && submitted,
+						'has-error': form.state.$invalid && submitted
+					}">
+					<div class="input-group">
+						<label class="sr-only" for="state">State</label>
+						<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+						<select name="state" class="form-control input-styles" ng-model="user.state" required>
+							<option value="" selected>State</option>
+							<option value="{{ state }}" ng-repeat="state in states">{{ state }}</option>
+						</select>
+						<p class="help-block" ng-show="form.state.$error.required && submitted">
+							State is required.
+						</p>
+					</div>
+				</div>
+				<div class="form-group" ng-class="{
+						'has-success': form.zipCode.$valid && submitted,
+						'has-error': form.zipCode.$invalid && submitted
+					}">
+					<div class="input-group">
+						<label class="sr-only" for="zipCode">ZIP Code</label>
+						<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+						<input type="number" name="zipCode" placeholder="ZIP Code" class="form-control input-styles" maxlength="5" ng-model="user.zipCode" ng-minlength="5" required />
+						<p class="help-block" ng-show="(form.zipCode.$error.minlength || form.zipCode.$error.required) && submitted">
+							ZIP code must be 5 characters.
+						</p>
+						<p class="help-block" ng-show="form.zipCode.$error.number && submitted">
+							Invalid ZIP code.
+						</p>
+					</div>
+				</div>
 				<p class="help-block"> {{ message }}</p>
 				<div class="center">
-                	<button class="btn btn-lg btn-danger btn-continue" type="submit">Save &amp; Continue</button>
-                 </div><!-- center -->
+					<button class="btn btn-lg btn-danger btn-continue" type="submit">Save &amp; Continue</button>
+				</div>
+				<!-- center -->
 			</form>
-		</div><!-- col-sm-12-->
-	</div><!-- container -->
+		</div>
+		<!-- col-sm-12-->
+	</div>
+	<!-- container -->
 </div><!-- container -->
 <div class="container" ng-show="!getCurrentUser().verified">
 	<div class="row">
 		<div class="col-lg-8 col-lg-offset-2">
 			<div class="alert alert-success" role="alert">
-				Welcome! Check your inbox for instructions to verify your email and then come back to
-				complete next steps.
+				Welcome! Check your inbox for instructions to verify your email and then come back to complete next steps.
 			</div>
 		</div>
 	</div>

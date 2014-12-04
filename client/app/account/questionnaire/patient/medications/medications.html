@@ -1,0 +1,26 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+	<div class="seperator-1">
+		<h1 class="default-header">Gaheen Jewel Patient Questionnaire</h1>
+	</div>
+	<div class="col-sm-12">
+		<h4 class="lead center">What medications are you currently taking?</h4>
+	</div>
+	<div class="container registration-form">
+		<div class="col-sm-12">
+			<form class="form" name="form" ng-submit="commit(form)" novalidate>
+				<div class="form-group">
+					<label class="sr-only" for="medications">Medications</label>
+					<tags-input ng-model="user.medications" display-property="name" placeholder="Add a medication" replace-spaces-with-dashes="false" add-from-autocomplete-only="true">
+						<auto-complete source="drugs($query)"></auto-complete>
+					</tags-input>
+				</div>
+				<p class="help-block">{{ message }}</p>
+				<div class="center">
+					<button class="btn btn-lg btn-danger btn-continue" type="submit">Save &amp; Continue</button>
+				</div>
+				<!-- center -->
+			</form>
+		</div>
+	</div>
+</div> <!-- container -->

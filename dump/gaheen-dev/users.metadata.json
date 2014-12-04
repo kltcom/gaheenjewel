@@ -1,1 +1,1 @@
-{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "gaheen-dev.users" } ] }
+{ "indexes" : [ { "v" : 1, "key" : { "_id" : 1 }, "name" : "_id_", "ns" : "gaheen-dev.users" }, { "v" : 1, "key" : { "email" : 1 }, "name" : "email", "ns" : "gaheen-dev.users" }, { "v" : 1, "key" : { "username" : 1 }, "name" : "username", "ns" : "gaheen-dev.users" } ] }

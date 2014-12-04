@@ -19,10 +19,20 @@ angular.module('gaheenApp').config(function ($stateProvider) {
 		templateUrl: 'app/account/verify/verify.html',
 		controller: 'VerifyCtrl',
 		authenticate: true
-	}).state('patient', {
-		url: '/patient',
-		templateUrl: 'app/account/patient/patient.html',
-		controller: 'PatientCtrl',
+	}).state('medications', {
+		url: '/questionnaire/patient/medications',
+		templateUrl: 'app/account/questionnaire/patient/medications/medications.html',
+		controller: 'MedicationsCtrl',
+		authenticate: true
+	}).state('medicalconditions', {
+		url: '/questionnaire/patient/medicalconditions',
+		templateUrl: 'app/account/questionnaire/patient/medicalconditions/medicalconditions.html',
+		controller: 'MedicalConditionsCtrl',
+		authenticate: true
+	}).state('strains', {
+		url: '/questionnaire/patient/strains',
+		templateUrl: 'app/account/questionnaire/patient/strains/strains.html',
+		controller: 'StrainsCtrl',
 		authenticate: true
 	});
 });
