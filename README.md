@@ -1,3 +1,8 @@
+User Email Verification:
+Since we do not have production access in amazon ses so before we can send verification email the sender's email 
+and receiver's email must be verified with amazon ses. So if you need to test this implementation you need to make
+some changes to user.controller.js line 50 and line 51.
+
 install node and mongodb
 
 you can check to see if you have node with this command “node -v”
