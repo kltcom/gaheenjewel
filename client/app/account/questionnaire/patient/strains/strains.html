@@ -1,12 +1,19 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
 <div class="container">
-	<div class="seperator-1">
-		<h1 class="default-header">Gaheen Jewel Patient Questionnaire</h1>
-	</div>
+	<div class="col-sm-offset-2 col-sm-8 center white-bg layered-paper">
+    	<h1 class="default-header">Gaheen Jewel Patient Questionnaire</h1>
+        
+        <div class="onboarding-hr">
+        	<ul>
+            	<li></li>
+                <li></li>
+            </ul>
+        </div>
+
 	<div class="col-sm-12">
-		<h4 class="lead center">Do you currently use a particular strain for any of your conditions?</h4>
+		<h4 class="lead center lead-margin">Do you currently use a particular strain for any of your conditions?</h4>
 	</div>
-	<div class="container registration-form">
+	<div class="registration-form">
 		<div class="col-sm-12">
 			<form class="form" name="form" ng-submit="commit(form)" novalidate>
 				<div class="form-group">

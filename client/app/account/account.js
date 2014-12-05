@@ -18,7 +18,7 @@ angular.module('gaheenApp').config(function ($stateProvider) {
 		url: '/verify',
 		templateUrl: 'app/account/verify/verify.html',
 		controller: 'VerifyCtrl',
-		authenticate: true
+		authenticate: false
 	}).state('medications', {
 		url: '/questionnaire/patient/medications',
 		templateUrl: 'app/account/questionnaire/patient/medications/medications.html',

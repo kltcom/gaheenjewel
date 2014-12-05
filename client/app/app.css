@@ -38,10 +38,16 @@
     padding: 0.2em 0;
 }
 
+body {
+	
+	color: #6d7683;
+	}
+
 a {outline: none !important; border: none !important;}
 .center {text-align: center;}
 .none {display: none;}
 .white-bg {background-color: #FFF;}
+.lead-margin {margin-top: 35px;}
 
 .layered-paper {
 	box-shadow:0 1px 1px rgba(0,0,0,0.05), /* The top layer shadow */
@@ -55,6 +61,7 @@ a {outline: none !important; border: none !important;}
 	text-transform: uppercase;
 	text-align: center;
 	color: #2f3c4e;
+	font-size: 24px;
 	}
 	
 .seperator-1 {
@@ -329,6 +336,8 @@ a {outline: none !important; border: none !important;}
 
 .btn-continue {
 	margin-top: 25px;
+	font-size: 15px;
+	text-transform: uppercase;
 	}
 	
 
