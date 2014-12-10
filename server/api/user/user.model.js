@@ -41,9 +41,29 @@ var userSchema = new Schema({
 			type: Schema.Types.ObjectId
 		}
 	],
-	verified:{
-		type: Boolean,
-		default:false
+	businessName: String,
+	businessAddress1: String,
+	businessAddress2: String,
+	businessCity: String,
+	businessState: String,
+	businessZipCode: Number,
+	businessPhone: Number,
+	businessFax: Number,
+	url: String,
+	description: String,
+	missionStatement: String,
+	driversName: String,
+	driversLicenseNumber: Number,
+	driversLicenseImage: String,
+	vehicleMake: String,
+	vehicleModel: String,
+	vehicleYear: Number,
+	vehicleRegistrationNumber: String,
+	vehicleInsurancePolicyNumber: String,
+	vehicleImages: Array,
+	verified: {
+		default: false,
+		type: Boolean
 	}
 });
 
@@ -126,6 +146,9 @@ userSchema.pre('save', function (next) {
 	if (_.isEmpty(this.address2)) this.address2 = undefined;
 	if (_.isEmpty(this.medications)) this.medications = undefined;
 	if (_.isEmpty(this.medicalConditions)) this.medicalConditions = undefined;
+	if (_.isEmpty(this.businessAddress2)) this.businessAddress2 = undefined;
+	if (_.isEmpty(this.url)) this.url = undefined;
+	if (_.isEmpty(this.missionStatement)) this.missionStatement = undefined;
 	if (_.isEmpty(this.hashedPassword) && this.isNew) next(new Error('Invalid password.'));
 	else next();
 });

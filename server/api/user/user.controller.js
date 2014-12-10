@@ -42,8 +42,8 @@ exports.create = function (req, res, next) {
 	user.role = 'user';
 	user.save(function (err, user) {
 		if (err) return validationError(res, err);
-		var verificationToken = new Verificationtoken({_userId:user._id});
-		tokenController.createVerificationToken(verificationToken, function(err, token){
+		var verificationToken = new Verificationtoken({_userId: user._id});
+		tokenController.createVerificationToken(verificationToken, function (err, token) {
 			if (err) return console.log("Couldn't create verification token", err);
 			console.log('success' + token);
 			var mail = {
@@ -55,11 +55,11 @@ exports.create = function (req, res, next) {
 					token: token,
 					email: user.email
 				}
-			}
-			transporter.sendMail(mail, function(err){
-			  if(err) console.log(err);
-			  else
-			    console.log('success');
+			};
+			transporter.sendMail(mail, function (err) {
+				if (err) console.log(err);
+				else
+					console.log('success');
 			});
 		});
 		var token = jwt.sign({_id: user._id}, config.secrets.session, {expiresInMinutes: 60 * 5});
@@ -142,12 +142,42 @@ exports.setType = function (req, res) {
 	var id = req.user._id;
 	User.findById(id, function (err, user) {
 		user.type = req.body.type;
-		user.username = req.body.username;
-		user.address1 = req.body.address1;
-		user.address2 = req.body.address2;
-		user.city = req.body.city;
-		user.state = req.body.state;
-		user.zipCode = req.body.zipCode;
+		switch (req.body.type) {
+			case "dispensary":
+			case "physician":
+				user.businessName = req.body.businessName;
+				user.businessAddress1 = req.body.businessAddress1;
+				user.businessAddress2 = req.body.businessAddress2;
+				user.businessCity = req.body.businessCity;
+				user.businessState = req.body.businessState;
+				user.businessZipCode = req.body.businessZipCode;
+				user.businessPhone = req.body.businessPhone;
+				user.businessFax = req.body.businessFax;
+				user.url = req.body.url;
+				break;
+			case "manufacturer":
+			case "purveyor":
+				user.businessName = req.body.businessName;
+				user.businessAddress1 = req.body.businessAddress1;
+				user.businessAddress2 = req.body.businessAddress2;
+				user.businessCity = req.body.businessCity;
+				user.businessState = req.body.businessState;
+				user.businessZipCode = req.body.businessZipCode;
+				user.url = req.body.url;
+				break;
+			case "patient":
+				user.username = req.body.username;
+				user.address1 = req.body.address1;
+				user.address2 = req.body.address2;
+				user.city = req.body.city;
+				user.state = req.body.state;
+				user.zipCode = req.body.zipCode;
+				break;
+			case "transporter":
+				user.driversName = req.body.driversName;
+				user.driversLicenseNumber = req.body.driversLicenseNumber;
+				break;
+		}
 		user.save(function (err) {
 			if (err) return validationError(res, err);
 			res.send(200);

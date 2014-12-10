@@ -1,0 +1,114 @@
+<div class="form-group" ng-class="{
+	'has-success': form.driversName.$valid && submitted,
+	'has-error': form.driversName.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="driversName">Driver's Name</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-user input-icon-overlay"></span></div>
+		<input type="text" name="driversName" placeholder="Driver's Name" class="form-control input-styles" ng-model="user.driversName" required />
+		<p class="help-block" ng-show="form.driversName.$error.required && submitted">
+			Driver's name is required.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.driversLicenseNumber.$valid && submitted,
+	'has-error': form.driversLicenseNumber.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="driversLicenseNumber">Driver's License #</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-credit-card input-icon-overlay"></span></div>
+		<input type="number" name="driversLicenseNumber" placeholder="Driver's License #" class="form-control input-styles" ng-model="user.driversLicenseNumber" required />
+		<p class="help-block" ng-show="form.driversLicenseNumber.$error.required && submitted">
+			Driver's license number is required.
+		</p>
+		<p class="help-block" ng-show="form.driversLicenseNumber.$error.number && submitted">
+			Invalid driver's license number.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.driversLicenseImage.$valid && submitted,
+	'has-error': form.driversLicenseImage.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="driversLicenseImage">Driver's License Image</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-picture input-icon-overlay"></span></div>
+		<input type="file" name="driversLicenseImage" placeholder="Driver's License Image" class="form-control input-styles" ng-model="user.driversLicenseImage" ng-file-select="" required />
+		<p class="help-block">
+			Upload driver's license (.pdf, .jpg, .doc).<br />
+			<em>* All documents must be scanned. Any photos will be rejected by our verification process.</em>
+		</p>
+		<p class="help-block" ng-show="form.driversLicenseImage.$error.required && submitted">
+			Driver's license image is required.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.vehicleYear.$valid && submitted,
+	'has-error': form.vehicleYear.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="vehicleYear">Vehicle Year</label>
+		<div class="input-group-addon"><span class="glyphicon input-icon-overlay"></span></div>
+		<input type="number" name="vehicleYear" placeholder="Vehicle Year" class="form-control input-styles" min="1900" max="{{ currentYear }}" ng-model="user.vehicleYear" ng-minlength="4" ng-maxlength="4" required />
+		<p class="help-block" ng-show="form.vehicleYear.$error.required && submitted">
+			Vehicle year is required.
+		</p>
+		<p class="help-block" ng-show="form.vehicleYear.$error.number && submitted">
+			Invalid vehicle year.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.vehicleMake.$valid && submitted,
+	'has-error': form.vehicleMake.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="vehicleMake">Vehicle Make</label>
+		<div class="input-group-addon"><span class="glyphicon input-icon-overlay"></span></div>
+		<input type="text" name="vehicleMake" placeholder="Vehicle Make" class="form-control input-styles" ng-model="user.vehicleMake" required />
+		<p class="help-block" ng-show="form.vehicleMake.$error.required && submitted">
+			Vehicle make is required.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.vehicleModel.$valid && submitted,
+	'has-error': form.vehicleModel.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="vehicleModel">Vehicle Model</label>
+		<div class="input-group-addon"><span class="glyphicon input-icon-overlay"></span></div>
+		<input type="text" name="vehicleModel" placeholder="Vehicle Model" class="form-control input-styles" ng-model="user.vehicleModel" required />
+		<p class="help-block" ng-show="form.vehicleModel.$error.required && submitted">
+			Vehicle model is required.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.vehicleRegistrationNumber.$valid && submitted,
+	'has-error': form.vehicleRegistrationNumber.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="vehicleRegistrationNumber">Vehicle Registration #</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-credit-card input-icon-overlay"></span></div>
+		<input type="text" name="vehicleRegistrationNumber" placeholder="Vehicle Registration #" class="form-control input-styles" ng-model="user.vehicleRegistrationNumber" required />
+		<p class="help-block" ng-show="form.vehicleRegistrationNumber.$error.required && submitted">
+			Vehicle registration # is required.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.vehicleInsurancePolicyNumber.$valid && submitted,
+	'has-error': form.vehicleInsurancePolicyNumber.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="vehicleInsurancePolicyNumber">Vehicle Insurance Policy #</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-credit-card input-icon-overlay"></span></div>
+		<input type="text" name="vehicleInsurancePolicyNumber" placeholder="Vehicle Insurance Policy #" class="form-control input-styles" ng-model="user.vehicleInsurancePolicyNumber" required />
+		<p class="help-block" ng-show="form.vehicleInsurancePolicyNumber.$error.required && submitted">
+			Vehicle insurance policy # is required.
+		</p>
+	</div>
+</div>
