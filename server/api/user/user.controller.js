@@ -46,14 +46,16 @@ exports.create = function (req, res, next) {
 		tokenController.createVerificationToken(verificationToken, function (err, token) {
 			if (err) return console.log("Couldn't create verification token", err);
 			console.log('success' + token);
+			var verifyURL = req.protocol + "://" + req.get('host') + "/verifyUser/" + token;
 			var mail = {
 				from: 'satnam@hcprtc.com',
-				to: 'satnamsjarria@gmail.com',
+				to: user.email,
 				subject: 'verify your email',
 				template: 'welcome',
 				context: {
 					token: token,
-					email: user.email
+					email: user.email,
+					url: verifyURL
 				}
 			};
 			transporter.sendMail(mail, function (err) {
