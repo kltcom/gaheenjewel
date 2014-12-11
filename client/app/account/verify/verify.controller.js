@@ -1,30 +1,12 @@
 'use strict';
 
-angular.module('gaheenApp').controller('VerifyCtrl', function ($scope, Auth, $location) {
+angular.module('gaheenApp').controller('VerifyCtrl', function ($scope, Auth, $state) {
+	$scope.$state = $state;
 	$scope.errors = {};
 	$scope.getCurrentUser = Auth.getCurrentUser;
-	$scope.states = [
-		'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut', 'Delaware', 'Florida', 'Georgia', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky',
-		'Louisiana', 'Maine', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana', 'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York',
-		'North Dakota', 'North Carolina', 'Ohio', 'Oklahoma', 'Oregon', 'Pennsylvania', 'Rhode Island', 'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virginia',
-		'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'
-	];
-	$scope.commit = function (form) {
-		$scope.submitted = true;
-		if (form.$valid) {
-			Auth.setType({
-				type: $scope.user.type,
-				username: $scope.user.username,
-				address1: $scope.user.address1,
-				address2: $scope.user.address2,
-				city: $scope.user.city,
-				state: $scope.user.state,
-				zipCode: $scope.user.zipCode
-			}).then(function () {
-				$location.path('/questionnaire/' + $scope.user.type + '/medications');
-			}).catch(function () {
-				$scope.message = '';
-			});
-		}
+	$scope.changeType = function () {
+		$state.go('verify.' + $scope.user.type);
+	};
+	$scope.commit = function () {
 	};
 });

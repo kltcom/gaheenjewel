@@ -1,0 +1,95 @@
+<div class="form-group" ng-class="{
+	'has-success': form.username.$valid && submitted,
+	'has-error': form.username.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="businessName">Name</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-user input-icon-overlay"></span></div>
+		<input type="text" name="businessName" placeholder="Name" class="form-control input-styles" ng-model="user.businessName" required />
+		<p class="help-block" ng-show="form.businessName.$error.required && submitted">
+			Name is required.
+		</p>
+	</div>
+	<!-- input group -->
+</div><!-- form group -->
+<div class="form-group" ng-class="{
+	'has-success': form.businessAddress1.$valid && submitted,
+	'has-error': form.businessAddress1.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="businessAddress1">Address 1</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+		<input type="text" name="businessAddress1" placeholder="Address 1" class="form-control input-styles" ng-model="user.businessAddress1" required />
+		<p class="help-block" ng-show="form.businessAddress1.$error.required && submitted">
+			Address 1 is required.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.businessAddress2.$valid && submitted,
+	'has-error': form.businessAddress2.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="businessAddress2">Address 2</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+		<input type="text" name="businessAddress2" placeholder="Address 2" class="form-control input-styles" ng-model="user.businessAddress2" />
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.businessCity.$valid && submitted,
+	'has-error': form.businessCity.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="businessCity">City</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+		<input type="text" name="businessCity" placeholder="City" class="form-control input-styles" ng-model="user.businessCity" required />
+		<p class="help-block" ng-show="form.businessCity.$error.required && submitted">
+			City is required.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.businessState.$valid && submitted,
+	'has-error': form.businessState.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="businessState">State</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+		<select name="businessState" class="form-control input-styles" ng-model="user.businessState" required>
+			<option value="" selected>State</option>
+			<option value="{{ state }}" ng-repeat="state in states">{{ state }}</option>
+		</select>
+		<p class="help-block" ng-show="form.businessState.$error.required && submitted">
+			State is required.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.businessZipCode.$valid && submitted,
+	'has-error': form.businessZipCode.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="businessZipCode">ZIP Code</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-map-marker input-icon-overlay"></span></div>
+		<input type="number" name="businessZipCode" placeholder="ZIP Code" class="form-control input-styles" maxlength="5" ng-model="user.businessZipCode" ng-minlength="5" required />
+		<p class="help-block" ng-show="(form.businessZipCode.$error.minlength || form.businessZipCode.$error.required) && submitted">
+			ZIP code must be 5 characters.
+		</p>
+		<p class="help-block" ng-show="form.businessZipCode.$error.number && submitted">
+			Invalid ZIP code.
+		</p>
+	</div>
+</div>
+<div class="form-group" ng-class="{
+	'has-success': form.url.$valid && submitted,
+	'has-error': form.url.$invalid && submitted
+}">
+	<div class="input-group">
+		<label class="sr-only" for="url">URL</label>
+		<div class="input-group-addon"><span class="glyphicon glyphicon-globe input-icon-overlay"></span></div>
+		<input type="url" name="url" placeholder="URL" class="form-control input-styles" ng-model="user.url" />
+		<p class="help-block" ng-show="form.url.$error.url && submitted">
+			Invalid URL.
+		</p>
+	</div>
+</div>

@@ -18,7 +18,42 @@ angular.module('gaheenApp').config(function ($stateProvider) {
 		url: '/verify',
 		templateUrl: 'app/account/verify/verify.html',
 		controller: 'VerifyCtrl',
+<<<<<<< HEAD
 		authenticate: false
+=======
+		authenticate: false,
+		abstract: true
+	}).state('verify.dispensary', {
+		url: '',
+		templateUrl: 'app/account/verify/verify.dispensary.html',
+		controller: 'VerifyDispensaryCtrl',
+		authenticate: true
+	}).state('verify.manufacturer', {
+		url: '',
+		templateUrl: 'app/account/verify/verify.manufacturer.html',
+		controller: 'VerifyManufacturerCtrl',
+		authenticate: true
+	}).state('verify.patient', {
+		url: '',
+		templateUrl: 'app/account/verify/verify.patient.html',
+		controller: 'VerifyPatientCtrl',
+		authenticate: true
+	}).state('verify.physician', {
+		url: '',
+		templateUrl: 'app/account/verify/verify.physician.html',
+		controller: 'VerifyPhysicianCtrl',
+		authenticate: true
+	}).state('verify.purveyor', {
+		url: '',
+		templateUrl: 'app/account/verify/verify.purveyor.html',
+		controller: 'VerifyPurveyorCtrl',
+		authenticate: true
+	}).state('verify.transporter', {
+		url: '',
+		templateUrl: 'app/account/verify/verify.transporter.html',
+		controller: 'VerifyTransporterCtrl',
+		authenticate: true
+>>>>>>> aef3480812aca2ba3a0cc6ae83ee4799c916cec5
 	}).state('medications', {
 		url: '/questionnaire/patient/medications',
 		templateUrl: 'app/account/questionnaire/patient/medications/medications.html',
@@ -33,6 +68,11 @@ angular.module('gaheenApp').config(function ($stateProvider) {
 		url: '/questionnaire/patient/strains',
 		templateUrl: 'app/account/questionnaire/patient/strains/strains.html',
 		controller: 'StrainsCtrl',
+		authenticate: true
+	}).state('info', {
+		url: '/questionnaire/purveyor/info',
+		templateUrl: 'app/account/questionnaire/purveyor/info/info.html',
+		controller: 'InfoCtrl',
 		authenticate: true
 	});
 });
