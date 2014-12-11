@@ -1,22 +1,20 @@
 'use strict';
 
-angular.module('gaheenApp')
-  .controller('MainCtrl', function ($scope, $http) {
-    $scope.awesomeThings = [];
-
-    $http.get('/api/things').success(function(awesomeThings) {
-      $scope.awesomeThings = awesomeThings;
-    });
-
-    $scope.addThing = function() {
-      if($scope.newThing === '') {
-        return;
-      }
-      $http.post('/api/things', { name: $scope.newThing });
-      $scope.newThing = '';
-    };
-
-    $scope.deleteThing = function(thing) {
-      $http.delete('/api/things/' + thing._id);
-    };
-  });
+angular.module('gaheenApp').controller('MainCtrl', function ($scope) {
+	$scope.myInterval = 3000;
+	$scope.slides = [
+		{
+			image: '/assets/images/placeholder-1.jpg'
+		}, {
+			image: '/assets/images/placeholder-2.jpg'
+		}, {
+			image: '/assets/images/placeholder-3.jpg'
+		}, {
+			image: '/assets/images/placeholder-4.jpg'
+		}, {
+			image: '/assets/images/placeholder-5.jpg'
+		}, {
+			image: '/assets/images/placeholder-6.jpg'
+		}
+	];
+});
