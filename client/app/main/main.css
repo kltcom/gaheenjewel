@@ -1,3 +1,6 @@
+.navbar{
+	margin-bottom: 0 !important;}
+
 .thing-form {
     margin: 20px 0;
 }
@@ -28,3 +31,28 @@
     margin-top: 70px;
     border-top: 1px solid #E5E5E5;
 }
+
+section {
+	display: block;
+	padding: 55px 0 55px 0;
+	min-height: 450px;
+	}
+	
+	#movement {
+		background: #FFF;
+		}
+		
+		
+	#main-slider {
+			padding: 0 !important;
+			min-height: 0 !important;
+			} 
+
+#social {
+	background: #24c668;
+	}
+	
+	.footer-homepage {
+		margin-top: 0 !important;}
+		
+		.homepage-lead {text-align: justify !important;}
