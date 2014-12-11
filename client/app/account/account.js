@@ -18,9 +18,6 @@ angular.module('gaheenApp').config(function ($stateProvider) {
 		url: '/verify',
 		templateUrl: 'app/account/verify/verify.html',
 		controller: 'VerifyCtrl',
-<<<<<<< HEAD
-		authenticate: false
-=======
 		authenticate: false,
 		abstract: true
 	}).state('verify.dispensary', {
@@ -53,7 +50,6 @@ angular.module('gaheenApp').config(function ($stateProvider) {
 		templateUrl: 'app/account/verify/verify.transporter.html',
 		controller: 'VerifyTransporterCtrl',
 		authenticate: true
->>>>>>> aef3480812aca2ba3a0cc6ae83ee4799c916cec5
 	}).state('medications', {
 		url: '/questionnaire/patient/medications',
 		templateUrl: 'app/account/questionnaire/patient/medications/medications.html',

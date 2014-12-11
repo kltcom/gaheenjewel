@@ -6,6 +6,7 @@
 
 var errors = require('./components/errors');
 var userController = require('./api/verificationToken/verificationToken.controller');
+var upload = require('./upload/upload.controller');
 
 module.exports = function (app) {
 	// Routes
@@ -22,14 +23,17 @@ module.exports = function (app) {
 	app.get('/verifyUser/:token', function (req, res, next) {
 		console.log('here in verify user');
 		var token = req.params.token;
-		userController.verifyUser(token, res,  function(err) {
+		userController.verifyUser(token, res, function (err) {
 			if (err) return res.redirect("verification-failure");
 			res.redirect("/verify");
 		});
 	});
+
 	// Other routes that should redirect to index.html
 	app.route('/*').get(function (req, res) {
 		res.sendfile(app.get('appPath') + '/index.html');
 	});
 
+	// Upload route
+	app.route('/upload').post(upload.upload);
 };

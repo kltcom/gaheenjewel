@@ -27,6 +27,7 @@
 		</p>
 	</div>
 </div>
+<!--
 <div class="form-group" ng-class="{
 	'has-success': form.driversLicenseImage.$valid && submitted,
 	'has-error': form.driversLicenseImage.$invalid && submitted
@@ -34,9 +35,11 @@
 	<div class="input-group">
 		<label class="sr-only" for="driversLicenseImage">Driver's License Image</label>
 		<div class="input-group-addon"><span class="glyphicon glyphicon-picture input-icon-overlay"></span></div>
-		<input type="file" name="driversLicenseImage" placeholder="Driver's License Image" class="form-control input-styles" ng-model="user.driversLicenseImage" ng-file-select="" required />
+		<input type="file" name="driversLicenseImage" placeholder="Driver's License Image" class="form-control input-styles" accept="application/msword,application/pdf,image/jpeg,image/jpg" ng-model="user.driversLicenseImage" ng-file-select="" ng-file-change="" required />
+		<span ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span> <img ng-src="uploadedImage" ng-if="uploadedImage" />
 		<p class="help-block">
-			Upload driver's license (.pdf, .jpg, .doc).<br />
+			Upload driver's license (.pdf, .jpg, .doc).
+			<br />
 			<em>* All documents must be scanned. Any photos will be rejected by our verification process.</em>
 		</p>
 		<p class="help-block" ng-show="form.driversLicenseImage.$error.required && submitted">
@@ -44,6 +47,7 @@
 		</p>
 	</div>
 </div>
+//-->
 <div class="form-group" ng-class="{
 	'has-success': form.vehicleYear.$valid && submitted,
 	'has-error': form.vehicleYear.$invalid && submitted
@@ -111,4 +115,8 @@
 			Vehicle insurance policy # is required.
 		</p>
 	</div>
+</div>
+<div class="row">
+	UPLOAD DRIVER'S LICENSE<br />
+	<button type="button" ng-model="user.driversLicenseImage" ng-file-change="upload(user.driversLicenseImage)" ng-file-select="" ng-accept="'application/msword,application/pdf,image/jpeg,image/jpg'">Choose File</button>
 </div>
