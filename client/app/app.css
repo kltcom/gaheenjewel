@@ -39,7 +39,11 @@
 }
 
 body {
+<<<<<<< .merge_file_dBcOQC
 	font-family: 'Open Sans', sans-serif;
+=======
+	
+>>>>>>> .merge_file_XWSDyu
 	color: #6d7683;
 	}
 
@@ -48,8 +52,11 @@ a {outline: none !important; border: none !important;}
 .none {display: none;}
 .white-bg {background-color: #FFF;}
 .lead-margin {margin-top: 35px;}
+<<<<<<< .merge_file_dBcOQC
 h1 {font-weight: 300; color: #24c668; padding-bottom:35px;}
 lead {text-align: center;}
+=======
+>>>>>>> .merge_file_XWSDyu
 
 .layered-paper {
 	box-shadow:0 1px 1px rgba(0,0,0,0.05), /* The top layer shadow */
@@ -64,7 +71,10 @@ lead {text-align: center;}
 	text-align: center;
 	color: #2f3c4e;
 	font-size: 24px;
+<<<<<<< .merge_file_dBcOQC
 	padding-top: 35px;
+=======
+>>>>>>> .merge_file_XWSDyu
 	}
 	
 .seperator-1 {
