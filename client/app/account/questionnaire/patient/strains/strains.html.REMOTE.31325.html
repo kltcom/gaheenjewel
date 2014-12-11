@@ -1,0 +1,32 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container">
+	<div class="col-sm-offset-2 col-sm-8 center white-bg layered-paper">
+    	<h1 class="default-header">Gaheen Jewel Patient Questionnaire</h1>
+        
+        <div class="onboarding-hr">
+        	<ul>
+            	<li></li>
+                <li></li>
+            </ul>
+        </div>
+
+	<div class="col-sm-12">
+		<h4 class="lead center lead-margin">Do you currently use a particular strain for any of your conditions?</h4>
+	</div>
+	<div class="registration-form">
+		<div class="col-sm-12">
+			<form class="form" name="form" ng-submit="commit(form)" novalidate>
+				<div class="form-group">
+					<ul>
+						<li ng-repeat="medicalCondition in medicalConditions">{{ medicalCondition.name }}</li>
+					</ul>
+				</div>
+				<p class="help-block">{{ message }}</p>
+				<div class="center">
+					<button class="btn btn-lg btn-danger btn-continue" type="submit">Save &amp; Continue</button>
+				</div>
+				<!-- center -->
+			</form>
+		</div>
+	</div>
+</div> <!-- container -->

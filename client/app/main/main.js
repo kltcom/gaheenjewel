@@ -22,6 +22,15 @@ function CarouselDemoCtrl($scope){
     },
     {
       image: '/assets/images/placeholder-3.jpg'
-    }    
+    },
+	{
+		image: '/assets/images/placeholder-4.jpg'
+	},
+	{
+		image: '/assets/images/placeholder-5.jpg'
+	},
+	{
+		image: '/assets/images/placeholder-6.jpg'
+	}
   ];
 }
