@@ -38,10 +38,18 @@
     padding: 0.2em 0;
 }
 
+body {
+	font-family: 'Open Sans', sans-serif;
+	color: #6d7683;
+	}
+
 a {outline: none !important; border: none !important;}
 .center {text-align: center;}
 .none {display: none;}
 .white-bg {background-color: #FFF;}
+.lead-margin {margin-top: 35px;}
+h1 {font-weight: 300; color: #24c668; padding-bottom:35px;}
+lead {text-align: center;}
 
 .layered-paper {
 	box-shadow:0 1px 1px rgba(0,0,0,0.05), /* The top layer shadow */
@@ -55,6 +63,8 @@ a {outline: none !important; border: none !important;}
 	text-transform: uppercase;
 	text-align: center;
 	color: #2f3c4e;
+	font-size: 24px;
+	padding-top: 35px;
 	}
 	
 .seperator-1 {
@@ -289,6 +299,25 @@ a {outline: none !important; border: none !important;}
   margin-top: -3px;
 }
 
+.onboarding-hr-step1 li {
+		display: inline-block;
+		width: 4%;
+		height: 4px;
+	}
+	
+.onboarding-hr-step1 li:nth-child(1) {
+  background:#24c668;
+  width: 15% !important;
+  
+}
+
+.onboarding-hr-step1 li:nth-child(2) {
+  background:#ecedee;
+  width: 75% !important;
+  height: 1px;
+  margin-top: -3px;
+}
+
 
 /*Full Background */
 
@@ -301,6 +330,17 @@ a {outline: none !important; border: none !important;}
 }
 
 
+/* Homepage */
+
+.btn-landing-register {
+	background-color: #24c668;
+	text-transform: uppercase;
+}
+
+.btn-landing-login {
+	background-color: #ff9201;
+	text-transform: uppercase;
+}
 
 
 /*Registration*/
@@ -329,7 +369,25 @@ a {outline: none !important; border: none !important;}
 
 .btn-continue {
 	margin-top: 25px;
+	font-size: 15px;
+	text-transform: uppercase;
 	}
+	
+	
+/*Carousel*/
+	
+.ng-scope img {width: 100% !important;}
+
+/*Icon Sizes*/
+
+.size98 {font-size: 98px;}
+
+/*Color Specific Changes*/
+.white {color: #FFF;}
+
+/* Universal*/
+.main-content {
+	margin-top: 45px !important;}
 	
 
 
