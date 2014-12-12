@@ -26,8 +26,7 @@
 			Invalid driver's license number.
 		</p>
 	</div>
-</div>
-<!--
+</div><!--
 <div class="form-group" ng-class="{
 	'has-success': form.driversLicenseImage.$valid && submitted,
 	'has-error': form.driversLicenseImage.$invalid && submitted
@@ -117,6 +116,13 @@
 	</div>
 </div>
 <div class="row">
-	UPLOAD DRIVER'S LICENSE<br />
-	<button type="button" ng-model="user.driversLicenseImage" ng-file-change="upload(user.driversLicenseImage)" ng-file-select="" ng-accept="'application/msword,application/pdf,image/jpeg,image/jpg'">Choose File</button>
+	UPLOAD DRIVER'S LICENSE
+	<br />
+	<button type="button" ng-model="user.driversLicenseImage" ng-file-select ng-accept="'application/msword,application/pdf,image/jpeg,image/jpg'">Choose File</button>
+	<span ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span> <img ng-src="uploadedImage" ng-if="uploadedImage" />
+	<p class="help-block">
+		Upload driver's license (.pdf, .jpg, .doc).
+		<br />
+		<em>* All documents must be scanned. Any photos will be rejected by our verification process.</em>
+	</p>
 </div>
