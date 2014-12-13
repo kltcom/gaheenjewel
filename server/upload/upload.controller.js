@@ -2,7 +2,7 @@
 
 var uuid = require('node-uuid');
 var multiparty = require('multiparty');
-var fs = require('fs.extra');
+var fs = require('fs-extra');
 var config = require('../config/environment');
 
 exports.upload = function (req, res) {
