@@ -1,0 +1,47 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+<div class="container-fluid main-content">
+	<div class="row">
+		<!--start sidebar-->
+		<div class="col-sm-3 col-md-3 col-lg-3 col-lg-offset-1 sidebar">
+			<div class="row user-info-container">
+				<div class="img-circle">
+					<img src="../assets/images/yeoman.png" alt="..."/>
+				</div>
+				<h5>Space Casey</h5>
+				<p>Patient: San Francisco,CA</p>
+				<p>spacecasey510@gmail.com | 510.427.4179</p>
+				<a href="#" class="btn btn-primary" role="button">More Info</a>
+				<a href="#" class="btn btn-primary " role="button">Account</a>
+			</div>
+			<div class="row">
+				<div ng-include="'components/dashboard/notifications.html'"></div>
+			</div>
+			<div class="row">
+				<div ng-include="'components/dashboard/patient-overview/patientOverview.html'"></div>
+			</div>
+			<div class="row">
+				<div ng-include="'components/dashboard/medical-conditions/medicalConditions.html'"></div>
+			</div>
+		</div>
+		<!--end side bar-->
+		<!--start content-->
+		<div class="col-sm-7 col-md-7 col-lg-7 tabs-div">
+
+			<tabset>
+				<tab heading="ACTIVITY">
+					<div ng-include="'components/dashboard/tabs/activity/activity.html'"></div>
+				</tab>
+				<tab heading="DISCOVER">
+					content
+				</tab>
+				<tab heading="MARKET">
+					market
+				</tab>
+				<tab heading="ACADEMY">
+					academy
+				</tab>
+			</tabset>
+		</div>
+		<!--end content-->
+	</div>
+</div>

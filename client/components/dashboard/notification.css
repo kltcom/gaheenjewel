@@ -1,0 +1,16 @@
+.small-img{
+	height: 50px;
+	width: 50px;
+	background-color: #808080;
+}
+.notification-div{
+	margin-top: 20px;
+	border: 1px solid rgba(0,0,0,0.2);
+	background-color: #fff;
+}
+.notification-div p{
+	font-size:10px;
+}
+.notification-div .time-stamp{
+	font-size:9px;
+}

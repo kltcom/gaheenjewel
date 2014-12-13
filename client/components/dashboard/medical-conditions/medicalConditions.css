@@ -1,0 +1,28 @@
+.medical-conditions-div{
+	margin-top: 20px;
+	border: 1px solid rgba(0,0,0,0.2);
+	background-color: #fff;
+	padding:15px;
+}
+.medical-conditions-div .glyphicon-folder-open{
+	background-color: #000;
+	height: 22px;
+	width: 22px;
+	text-align: center;
+	padding-top: 4px;
+	color: #fff;
+}
+.medical-conditions-div .glyphicon-plus{
+	float:right;
+	margin-top:3px;
+}
+.medical-conditions-div p{
+	font-size:11px;
+}
+.medical-conditions-div .glyphicon-chevron-down, .medical-conditions-div .glyphicon-chevron-up{
+	float:right;
+}
+.medical-conditions-div ul{
+	margin-left:20px;
+	font-size:11px;
+}

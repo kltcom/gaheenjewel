@@ -1,0 +1,38 @@
+.banner-img{
+	border:1px solid rgba(0, 0, 0, 0.1);
+	margin-left: 0px;
+	height:300px;
+	margin-top:20px;
+	background-color: #c0c0c0;
+	border-radius:2px;
+}
+.welcome-div{
+	margin-left: 0px;
+	background-color: #fff;
+	border:1px solid rgba(0,0,0,0.2);
+}
+.welcome-div p{
+	font-size:12px;
+}
+.section-buttons a.btn{
+	border-radius: 0;
+	border: 1px solid #c0c0c0 !important;
+	font-size: 10px;
+	background-color: #f6f6f6;
+}
+.section-buttons{
+	padding-bottom: 20px;
+}
+.color-blue{
+	color:#428bca;
+}
+.third-section{
+	margin-top:20px;
+	margin-bottom:50px;
+}
+#background{
+	background:none !important;
+}
+.main-content{
+	background-color: #f1f1f1;
+}
