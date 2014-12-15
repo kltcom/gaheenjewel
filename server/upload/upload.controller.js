@@ -14,7 +14,7 @@ exports.upload = function (req, res) {
 		var index = oldPath.lastIndexOf('.');
 		var extension = (index < 0) ? '' : oldPath.substr(index);
 		var name = uuid.v4() + extension;
-		var newPath = config.root + '/server/data/' + name;
+		var newPath = config.root + '/server/data/' + fields['id'] + '/' + name;
 
 		//if (type !== 'application/msword' && type !== 'application/pdf' && type !== 'image/jpeg' && type !== 'image/jpg') {
 		//	fs.unlink(tmpPath);
@@ -26,7 +26,7 @@ exports.upload = function (req, res) {
 				fs.unlink(oldPath);
 				return res.status(400).send(err);
 			}
-			return res.json(name);
+			return res.send(name);
 		});
 	});
 };

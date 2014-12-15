@@ -2,6 +2,7 @@
 
 angular.module('gaheenApp').controller('VerifyTransporterCtrl', function ($scope, Auth, $location, $upload) {
 	$scope.currentYear = new Date().getFullYear();
+	$scope.getCurrentUser = Auth.getCurrentUser;
 	$scope.$parent.commit = function (form) {
 		$scope.submitted = true;
 		if (form.$valid) {
@@ -32,6 +33,8 @@ angular.module('gaheenApp').controller('VerifyTransporterCtrl', function ($scope
 		//	alert('Unsupported file type.');
 		//	return;
 		//}
+		$scope.uploadInProgress = true;
+		$scope.uploadProgress = 0;
 		$scope.upload = $upload.upload({
 			url: '/upload', // upload.php script, node.js route, or servlet url
 			method: 'POST',
@@ -39,18 +42,22 @@ angular.module('gaheenApp').controller('VerifyTransporterCtrl', function ($scope
 				'Content-Type': 'multipart/form-data'
 			}, //headers: {'Authorization': 'xxx'}, // only for html5
 			//withCredentials: true,
-			//data: {myObj: $scope.myModelObj},
+			data: {id: $scope.getCurrentUser().id},
 			file: image // single file or a list of files. list is only for html5
 			//fileName: 'doc.jpg' or ['1.jpg', '2.jpg', ...] // to modify the name of the file(s)
 			//fileFormDataName: myFile, // file formData name ('Content-Disposition'), server side request form name
 			// could be a list of names for multiple files (html5). Default is 'file'
 			//formDataAppender: function(formData, key, val){}  // customize how data is added to the formData.
 			// See #40#issuecomment-28612000 for sample code
-		}).progress(function (evt) {
-			console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :' + evt.config.file.name);
+		}).progress(function (event) {
+			$scope.uploadProgress = Math.min(100, parseInt(100.0 * event.loaded / event.total));
+			//console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :' + evt.config.file.name);
 		}).success(function (data, status, headers, config) {
 			// file is uploaded successfully
-			console.log('file ' + config.file.name + 'is uploaded successfully. Response: ' + data);
+			//console.log('file ' + config.file.name + 'is uploaded successfully. Response: ' + data);
+			$scope.uploadInProgress = false;
+			// If you need uploaded file immediately
+			$scope.uploadedImage = data;
 		});
 		//.error(...)
 		//.then(success, error, progress); // returns a promise that does NOT have progress/abort/xhr functions
