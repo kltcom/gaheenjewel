@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gaheenApp').controller('MedicalConditionsCtrl', function ($scope, $http, Auth, $location) {
+angular.module('gaheenApp').controller('QuestionnairePatientMedicalConditionsCtrl', function ($scope, $http, Auth, $location) {
 	$scope.errors = {};
 	$scope.commit = function (form) {
 		$scope.submitted = true;

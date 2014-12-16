@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gaheenApp', [
-	'angularFileUpload', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTagsInput', 'ui.bootstrap', 'ui.router', 'ui.utils', 'match'
+	'angularFileUpload', 'angular.img', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTagsInput', 'ui.bootstrap', 'ui.router', 'ui.utils', 'match'
 ]).config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 	$urlRouterProvider.otherwise('/');
 	$locationProvider.html5Mode(true);

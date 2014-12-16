@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gaheenApp').controller('StrainsCtrl', function ($scope, $http, Auth, $location) {
+angular.module('gaheenApp').controller('QuestionnairePatientStrainsCtrl', function ($scope, $http, Auth, $location) {
 	$scope.errors = {};
 	$scope.medicalConditions = Auth.getCurrentUser().medicalConditions;
 	console.log($scope.medicalConditions);

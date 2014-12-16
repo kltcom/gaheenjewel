@@ -16,10 +16,10 @@ exports.upload = function (req, res) {
 		var name = uuid.v4() + extension;
 		var newPath = config.root + '/server/data/' + fields['id'] + '/' + name;
 
-		//if (type !== 'application/msword' && type !== 'application/pdf' && type !== 'image/jpeg' && type !== 'image/jpg') {
-		//	fs.unlink(tmpPath);
-		//	return res.status(400).send(type);
-		//}
+		if (type !== 'application/msword' && type !== 'application/pdf' && type !== 'image/jpeg' && type !== 'image/jpg') {
+			fs.unlink(oldPath);
+			return res.status(400).send(type);
+		}
 
 		fs.move(oldPath, newPath, function (err) {
 			if (err) {

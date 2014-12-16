@@ -119,7 +119,7 @@
 	UPLOAD DRIVER'S LICENSE
 	<br />
 	<button type="button" ng-model="user.driversLicenseImage" ng-file-select ng-accept="'application/msword,application/pdf,image/jpeg,image/jpg'">Choose File</button>
-	<span ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span> <img ng-src="/data/{{ getCurrentUser().id }}/{{ uploadedImage }}" ng-if="uploadedImage" />
+	<span ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span> <img http-src="/data/{{ uploadedImage }}" ng-if="uploadedImage" />
 	<p class="help-block">
 		Upload driver's license (.pdf, .jpg, .doc).
 		<br />

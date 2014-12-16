@@ -7,8 +7,6 @@
 var errors = require('./components/errors');
 var userController = require('./api/verificationToken/verificationToken.controller');
 var upload = require('./upload/upload.controller');
-var config = require('./config/environment');
-var auth = require('./auth/auth.service');
 
 module.exports = function (app) {
 	// Routes
@@ -18,9 +16,10 @@ module.exports = function (app) {
 	app.use('/api/things', require('./api/thing'));
 	app.use('/api/users', require('./api/user'));
 	app.use('/auth', require('./auth'));
+	app.use('/data', require('./data'));
 
 	// Undefined assets or api routes that should return a 404
-	app.route('/:url(api|auth|components|app|bower_components|assets|upload)/*').get(errors[404]);
+	app.route('/:url(api|auth|components|app|bower_components|assets|upload|data)/*').get(errors[404]);
 
 	app.get('/verifyUser/:token', function (req, res, next) {
 		console.log('here in verify user');
@@ -29,16 +28,6 @@ module.exports = function (app) {
 			if (err) return res.redirect("verification-failure");
 			res.redirect("/verify");
 		});
-	});
-
-	/*
-	app.route('/data/:id/:file').get(auth.isAuthenticated(), function (req, res) {
-		res.sendfile(config.root + '/server/data/' + req.user._id + '/' + req.params.file);
-	});
-	*/
-
-	app.get('/data/:id/:file', function (req, res) {
-		res.sendfile(config.root + '/server/data/' + req.params.id + '/' + req.params.file);
 	});
 
 	// Other routes that should redirect to index.html

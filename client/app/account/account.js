@@ -50,25 +50,30 @@ angular.module('gaheenApp').config(function ($stateProvider) {
 		templateUrl: 'app/account/verify/verify.transporter.html',
 		controller: 'VerifyTransporterCtrl',
 		authenticate: true
-	}).state('medications', {
+	}).state('questionnaire.patient.medications', {
 		url: '/questionnaire/patient/medications',
 		templateUrl: 'app/account/questionnaire/patient/medications/medications.html',
-		controller: 'MedicationsCtrl',
+		controller: 'QuestionnairePatientMedicationsCtrl',
 		authenticate: true
-	}).state('medicalconditions', {
+	}).state('questionnaire.patient.medicalconditions', {
 		url: '/questionnaire/patient/medicalconditions',
 		templateUrl: 'app/account/questionnaire/patient/medicalconditions/medicalconditions.html',
-		controller: 'MedicalConditionsCtrl',
+		controller: 'QuestionnairePatientMedicalConditionsCtrl',
 		authenticate: true
-	}).state('strains', {
+	}).state('questionnaire.patient.strains', {
 		url: '/questionnaire/patient/strains',
 		templateUrl: 'app/account/questionnaire/patient/strains/strains.html',
-		controller: 'StrainsCtrl',
+		controller: 'QuestionnairePatientStrainsCtrl',
 		authenticate: true
-	}).state('info', {
-		url: '/questionnaire/purveyor/info',
-		templateUrl: 'app/account/questionnaire/purveyor/info/info.html',
-		controller: 'InfoCtrl',
+	}).state('questionnaire.purveyor.about', {
+		url: '/questionnaire/purveyor/about',
+		templateUrl: 'app/account/questionnaire/purveyor/about/about.html',
+		controller: 'QuestionnairePurveyorAboutCtrl',
+		authenticate: true
+	}).state('questionnaire.transporter.about', {
+		url: '/questionnaire/transporter/about',
+		templateUrl: 'app/account/questionnaire/transporter/about/about.html',
+		controller: 'QuestionnaireTransporterAboutCtrl',
 		authenticate: true
 	});
 });

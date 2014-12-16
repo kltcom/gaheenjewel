@@ -178,6 +178,12 @@ exports.setType = function (req, res) {
 			case "transporter":
 				user.driversName = req.body.driversName;
 				user.driversLicenseNumber = req.body.driversLicenseNumber;
+				user.driversLicenseImage = req.body.driversLicenseImage;
+				user.vehicleMake = req.body.vehicleMake;
+				user.vehicleModel = req.body.vehicleModel;
+				user.vehicleYear = req.body.vehicleYear;
+				user.vehicleRegistrationNumber = req.body.vehicleRegistrationNumber;
+				user.vehicleInsurancePolicyNumber = req.body.vehicleInsurancePolicyNumber;
 				break;
 		}
 		user.save(function (err) {
