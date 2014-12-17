@@ -1,11 +1,11 @@
 0 info it worked if it ends with ok
-1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'fs-extra' ]
+1 verbose cli [ 'node', '/usr/local/bin/npm', 'install', 'ngvideo' ]
 2 info using npm@1.4.28
 3 info using node@v0.10.33
 4 warn package.json nodemailer-express-handlebars@0.0.2 No repository field.
 5 verbose readDependencies using package.json deps
-6 verbose cache add [ 'fs-extra@^0.13.0', null ]
-7 verbose cache add name=undefined spec="fs-extra@^0.13.0" args=["fs-extra@^0.13.0",null]
+6 verbose cache add [ 'ngvideo', null ]
+7 verbose cache add name=undefined spec="ngvideo" args=["ngvideo",null]
 8 verbose parsed url { protocol: null,
 8 verbose parsed url   slashes: null,
 8 verbose parsed url   auth: null,
@@ -15,124 +15,71 @@
 8 verbose parsed url   hash: null,
 8 verbose parsed url   search: null,
 8 verbose parsed url   query: null,
-8 verbose parsed url   pathname: 'fs-extra@^0.13.0',
-8 verbose parsed url   path: 'fs-extra@^0.13.0',
-8 verbose parsed url   href: 'fs-extra@^0.13.0' }
-9 verbose cache add name="fs-extra" spec="^0.13.0" args=["fs-extra","^0.13.0"]
-10 verbose parsed url { protocol: null,
-10 verbose parsed url   slashes: null,
-10 verbose parsed url   auth: null,
-10 verbose parsed url   host: null,
-10 verbose parsed url   port: null,
-10 verbose parsed url   hostname: null,
-10 verbose parsed url   hash: null,
-10 verbose parsed url   search: null,
-10 verbose parsed url   query: null,
-10 verbose parsed url   pathname: '^0.13.0',
-10 verbose parsed url   path: '^0.13.0',
-10 verbose parsed url   href: '^0.13.0' }
-11 verbose addNamed [ 'fs-extra', '^0.13.0' ]
-12 verbose addNamed [ null, '>=0.13.0-0 <0.14.0-0' ]
-13 silly lockFile eae7fd1b-fs-extra-0-13-0 fs-extra@^0.13.0
-14 verbose lock fs-extra@^0.13.0 /Users/ninamorena/.npm/eae7fd1b-fs-extra-0-13-0.lock
-15 silly addNameRange { name: 'fs-extra',
-15 silly addNameRange   range: '>=0.13.0-0 <0.14.0-0',
-15 silly addNameRange   hasData: false }
-16 verbose request where is /fs-extra
-17 verbose request registry https://registry.npmjs.org/
-18 verbose request id c573510b9252f75a
-19 verbose url raw /fs-extra
-20 verbose url resolving [ 'https://registry.npmjs.org/', './fs-extra' ]
-21 verbose url resolved https://registry.npmjs.org/fs-extra
-22 verbose request where is https://registry.npmjs.org/fs-extra
-23 info trying registry request attempt 1 at 11:57:27
-24 verbose etag "3AJ19E3C3LGTYIK815D1G7VF4"
-25 http GET https://registry.npmjs.org/fs-extra
-26 http 200 https://registry.npmjs.org/fs-extra
-27 silly registry.get cb [ 200,
-27 silly registry.get   { date: 'Mon, 15 Dec 2014 16:57:28 GMT',
-27 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
-27 silly registry.get     etag: '"45636DSWN6TJEM21H9M1UAHEV"',
-27 silly registry.get     'content-type': 'application/json',
-27 silly registry.get     'cache-control': 'max-age=60',
-27 silly registry.get     'content-length': '51823',
-27 silly registry.get     'accept-ranges': 'bytes',
-27 silly registry.get     via: '1.1 varnish',
-27 silly registry.get     age: '0',
-27 silly registry.get     'x-served-by': 'cache-dfw1829-DFW',
-27 silly registry.get     'x-cache': 'HIT',
-27 silly registry.get     'x-cache-hits': '1',
-27 silly registry.get     'x-timer': 'S1418662647.926510,VS0,VE263',
-27 silly registry.get     vary: 'Accept',
-27 silly registry.get     'keep-alive': 'timeout=10, max=50',
-27 silly registry.get     connection: 'Keep-Alive' } ]
-28 silly addNameRange number 2 { name: 'fs-extra',
-28 silly addNameRange   range: '>=0.13.0-0 <0.14.0-0',
-28 silly addNameRange   hasData: true }
-29 silly addNameRange versions [ 'fs-extra',
-29 silly addNameRange   [ '0.0.1',
-29 silly addNameRange     '0.0.11',
-29 silly addNameRange     '0.0.3',
-29 silly addNameRange     '0.0.4',
-29 silly addNameRange     '0.1.0',
-29 silly addNameRange     '0.1.1',
-29 silly addNameRange     '0.1.2',
-29 silly addNameRange     '0.1.3',
-29 silly addNameRange     '0.2.0',
-29 silly addNameRange     '0.2.1',
-29 silly addNameRange     '0.3.0',
-29 silly addNameRange     '0.3.1',
-29 silly addNameRange     '0.3.2',
-29 silly addNameRange     '0.4.0',
-29 silly addNameRange     '0.5.0',
-29 silly addNameRange     '0.6.0',
-29 silly addNameRange     '0.6.1',
-29 silly addNameRange     '0.6.2',
-29 silly addNameRange     '0.6.3',
-29 silly addNameRange     '0.6.4',
-29 silly addNameRange     '0.7.0',
-29 silly addNameRange     '0.7.1',
-29 silly addNameRange     '0.8.0',
-29 silly addNameRange     '0.8.1',
-29 silly addNameRange     '0.9.0',
-29 silly addNameRange     '0.9.1',
-29 silly addNameRange     '0.10.0',
-29 silly addNameRange     '0.11.0',
-29 silly addNameRange     '0.11.1',
-29 silly addNameRange     '0.12.0',
-29 silly addNameRange     '0.13.0' ] ]
-30 verbose addNamed [ 'fs-extra', '0.13.0' ]
-31 verbose addNamed [ '0.13.0', '0.13.0' ]
-32 silly lockFile fe13d157-fs-extra-0-13-0 fs-extra@0.13.0
-33 verbose lock fs-extra@0.13.0 /Users/ninamorena/.npm/fe13d157-fs-extra-0-13-0.lock
-34 silly lockFile 3daca5e8-org-fs-extra-fs-extra-0-13-0-tgz https://registry.npmjs.org/fs-extra/-/fs-extra-0.13.0.tgz
-35 verbose lock https://registry.npmjs.org/fs-extra/-/fs-extra-0.13.0.tgz /Users/ninamorena/.npm/3daca5e8-org-fs-extra-fs-extra-0-13-0-tgz.lock
-36 verbose addRemoteTarball [ 'https://registry.npmjs.org/fs-extra/-/fs-extra-0.13.0.tgz',
-36 verbose addRemoteTarball   'dcafc10f2cb5184f2360b5ffff06267370539433' ]
-37 info retry fetch attempt 1 at 11:57:28
-38 verbose fetch to= /var/folders/t8/0rlwcckn3rgfz4w1s8xxvvg40000gn/T/npm-41882-YTMizs2b/registry.npmjs.org/fs-extra/-/fs-extra-0.13.0.tgz
-39 http GET https://registry.npmjs.org/fs-extra/-/fs-extra-0.13.0.tgz
-40 http 200 https://registry.npmjs.org/fs-extra/-/fs-extra-0.13.0.tgz
-41 silly lockFile 3daca5e8-org-fs-extra-fs-extra-0-13-0-tgz https://registry.npmjs.org/fs-extra/-/fs-extra-0.13.0.tgz
-42 silly lockFile 3daca5e8-org-fs-extra-fs-extra-0-13-0-tgz https://registry.npmjs.org/fs-extra/-/fs-extra-0.13.0.tgz
-43 silly lockFile fe13d157-fs-extra-0-13-0 fs-extra@0.13.0
-44 silly lockFile fe13d157-fs-extra-0-13-0 fs-extra@0.13.0
-45 silly lockFile eae7fd1b-fs-extra-0-13-0 fs-extra@^0.13.0
-46 silly lockFile eae7fd1b-fs-extra-0-13-0 fs-extra@^0.13.0
-47 error Error: EACCES, mkdir '/Users/ninamorena/.npm/fs-extra/0.13.0'
-47 error  { [Error: EACCES, mkdir '/Users/ninamorena/.npm/fs-extra/0.13.0']
-47 error   errno: 3,
-47 error   code: 'EACCES',
-47 error   path: '/Users/ninamorena/.npm/fs-extra/0.13.0',
-47 error   parent: 'gaheen' }
-48 error Please try running this command again as root/Administrator.
-49 error System Darwin 14.0.0
-50 error command "node" "/usr/local/bin/npm" "install" "fs-extra"
-51 error cwd /Users/ninamorena/Sites/gaheen-2
-52 error node -v v0.10.33
-53 error npm -v 1.4.28
-54 error path /Users/ninamorena/.npm/fs-extra/0.13.0
-55 error code EACCES
-56 error errno 3
-57 error stack Error: EACCES, mkdir '/Users/ninamorena/.npm/fs-extra/0.13.0'
-58 verbose exit [ 3, true ]
+8 verbose parsed url   pathname: 'ngvideo',
+8 verbose parsed url   path: 'ngvideo',
+8 verbose parsed url   href: 'ngvideo' }
+9 silly lockFile c6d0b0f9-ngvideo ngvideo
+10 verbose lock ngvideo /Users/ninamorena/.npm/c6d0b0f9-ngvideo.lock
+11 silly lockFile c6d0b0f9-ngvideo ngvideo
+12 silly lockFile c6d0b0f9-ngvideo ngvideo
+13 verbose addNamed [ 'ngvideo', '' ]
+14 verbose addNamed [ null, '*' ]
+15 silly lockFile 9d741c9e-ngvideo ngvideo@
+16 verbose lock ngvideo@ /Users/ninamorena/.npm/9d741c9e-ngvideo.lock
+17 silly addNameRange { name: 'ngvideo', range: '*', hasData: false }
+18 verbose request where is /ngvideo
+19 verbose request registry https://registry.npmjs.org/
+20 verbose request id 202777d9d942ad1d
+21 verbose url raw /ngvideo
+22 verbose url resolving [ 'https://registry.npmjs.org/', './ngvideo' ]
+23 verbose url resolved https://registry.npmjs.org/ngvideo
+24 verbose request where is https://registry.npmjs.org/ngvideo
+25 info trying registry request attempt 1 at 00:34:47
+26 http GET https://registry.npmjs.org/ngvideo
+27 http 404 https://registry.npmjs.org/ngvideo
+28 verbose headers { date: 'Wed, 17 Dec 2014 05:34:47 GMT',
+28 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+28 verbose headers   'content-type': 'application/json',
+28 verbose headers   'cache-control': 'max-age=0',
+28 verbose headers   'content-length': '52',
+28 verbose headers   'accept-ranges': 'bytes',
+28 verbose headers   via: '1.1 varnish',
+28 verbose headers   age: '0',
+28 verbose headers   'x-served-by': 'cache-ord1732-ORD',
+28 verbose headers   'x-cache': 'MISS',
+28 verbose headers   'x-cache-hits': '0',
+28 verbose headers   'x-timer': 'S1418794487.389457,VS0,VE68',
+28 verbose headers   'keep-alive': 'timeout=10, max=50',
+28 verbose headers   connection: 'Keep-Alive' }
+29 silly registry.get cb [ 404,
+29 silly registry.get   { date: 'Wed, 17 Dec 2014 05:34:47 GMT',
+29 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+29 silly registry.get     'content-type': 'application/json',
+29 silly registry.get     'cache-control': 'max-age=0',
+29 silly registry.get     'content-length': '52',
+29 silly registry.get     'accept-ranges': 'bytes',
+29 silly registry.get     via: '1.1 varnish',
+29 silly registry.get     age: '0',
+29 silly registry.get     'x-served-by': 'cache-ord1732-ORD',
+29 silly registry.get     'x-cache': 'MISS',
+29 silly registry.get     'x-cache-hits': '0',
+29 silly registry.get     'x-timer': 'S1418794487.389457,VS0,VE68',
+29 silly registry.get     'keep-alive': 'timeout=10, max=50',
+29 silly registry.get     connection: 'Keep-Alive' } ]
+30 silly lockFile 9d741c9e-ngvideo ngvideo@
+31 silly lockFile 9d741c9e-ngvideo ngvideo@
+32 error 404 404 Not Found: ngvideo
+32 error 404
+32 error 404 'ngvideo' is not in the npm registry.
+32 error 404 You should bug the author to publish it
+32 error 404 It was specified as a dependency of 'gaheen'
+32 error 404
+32 error 404 Note that you can also install from a
+32 error 404 tarball, folder, or http url, or git url.
+33 error System Darwin 14.0.0
+34 error command "node" "/usr/local/bin/npm" "install" "ngvideo"
+35 error cwd /Users/ninamorena/Sites/gaheen-2
+36 error node -v v0.10.33
+37 error npm -v 1.4.28
+38 error code E404
+39 verbose exit [ 1, true ]
