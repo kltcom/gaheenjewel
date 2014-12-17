@@ -42,17 +42,115 @@ section {
 		background: #FFF;
 		}
 		
+		#discover, #marketplace {
+			background: #f1f1f1;
+		}
 		
 	#main-slider {
 			padding: 0 !important;
 			min-height: 0 !important;
 			} 
 
-#social {
+#academy, #media {
 	background: #24c668;
 	}
 	
 	.footer-homepage {
-		margin-top: 0 !important;}
+		margin-top: 0 !important;
+		background-color: #263241;
+		padding-bottom: 65px;
+		}
+		
+		.footer-homepage h1 {
+			color: #FFF;
+			text-transform: uppercase;
+			}
 		
 		.homepage-lead {text-align: justify !important;}
+
+.slider-header {
+	font-weight: 300; 
+	text-transform: uppercase; 
+	font-size: 45px;
+}
+
+.carousel-caption {
+	top: 80px;
+}
+
+.homepage-slider p {
+	color: #FFF;
+	font-size: 22px;
+	line-height: 30px;
+	font-weight: 300;
+	padding-bottom: 35px;
+	}
+	
+	.btn-signup, .btn-register-homepage {
+		width: 250px;
+		border-radius: 5px;
+		color: #FFF;
+		text-transform: uppercase;
+		font-size: 20px;
+		padding: 12.5px;
+		}
+		
+		.btn-more-info, .btn-donate {
+			width: 49%;
+			color: #fff;
+			padding: 8px;
+			text-transform: uppercase;
+			}
+	
+	.btn-signup, .btn-more-info {background-color: #596371;}
+	.btn-register-homepage, .btn-donate {background-color: #24c668;}
+
+section h1 {text-align: center; text-transform: uppercase;}
+section h3 {
+	text-align: center; 
+	font-weight: 300;
+	margin-top: -25px;
+	padding-bottom: 35px;
+	}
+	
+	.discover-info, .marketplace-info{
+		background: #FFF;
+		padding: 25px;
+		padding-bottom: 45px;
+		border: 1px solid #d9dbdd;
+		}
+	
+	.discover-info p, .marketplace-info p {
+		padding-bottom: 25px;
+		line-height: 24px;
+		font-size: 1.0em;
+		margin-top: 15px;}
+		
+.discover-tags, .marketplace-tags {
+			display: block;
+			margin-top: -5px;}
+			
+#academy h1, #academy h3,  #media h1{
+	color: #FFF;
+	}
+	
+.btn-facebook, .btn-twitter, .btn-youtube {
+	padding: 10px;
+	width: 65%;}	
+	
+.btn-facebook {
+	background-color: #5d82d1;
+}
+
+.btn-twitter {
+	background-color: #40bff5;
+	}
+	
+.btn-youtube {
+	background-color: #ef4e41;
+	}
+
+.btn-txt {color: #2f3c4e;}
+
+#media video {
+	width: 100%;}

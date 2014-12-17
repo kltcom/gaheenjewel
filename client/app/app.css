@@ -41,9 +41,10 @@
 body {
 	font-family: 'Open Sans', sans-serif;
 	color: #6d7683;
+	background-color: #f1f1f1;
 	}
 
-a {outline: none !important; border: none !important;}
+a {outline: none !important; border: none !important; color: #51c4d4;}
 .center {text-align: center;}
 .none {display: none;}
 .white-bg {background-color: #FFF;}
@@ -322,7 +323,7 @@ lead {text-align: center;}
 /*Full Background */
 
 #background {
-	background: url('/assets/images/gaheen_bg.jpg') no-repeat 50% 50% fixed;
+	background: url('/assets/images/gaheen_bg.jpg') no-repeat 50% 50% fixed !important;
 	background-size: cover;
 	-moz-background-size:cover;
 	-o-background-size: cover;
@@ -388,6 +389,8 @@ lead {text-align: center;}
 /* Universal*/
 .main-content {
 	margin-top: 45px !important;}
+
+.green {color: #24c668;}
 	
 
 
