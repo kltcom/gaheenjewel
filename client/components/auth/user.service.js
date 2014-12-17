@@ -10,6 +10,12 @@ angular.module('gaheenApp').factory('User', function ($resource) {
 				id: 'me'
 			}
 		},
+		setAbout: {
+			method: 'PUT',
+			params: {
+				controller: 'about'
+			}
+		},
 		setMedicalConditions: {
 			method: 'PUT',
 			params: {

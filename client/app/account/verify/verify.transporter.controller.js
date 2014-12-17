@@ -16,16 +16,15 @@ angular.module('gaheenApp').controller('VerifyTransporterCtrl', function ($scope
 				vehicleRegistrationNumber: $scope.user.vehicleRegistrationNumber,
 				vehicleInsurancePolicyNumber: $scope.user.vehicleInsurancePolicyNumber
 			}).then(function () {
-				$location.path('/questionnaire/transporter/info');
+				$location.path('/questionnaire/transporter/about');
 			}).catch(function () {
 				$scope.message = '';
 			});
 		}
 	};
 	$scope.$watch('user.driversLicenseImage', function () {
-		var image = $scope.user.driversLicenseImage;
-		if (!_.isArray(image)) return;
-		image = image[0];
+		if (_.isUndefined($scope.user) || _.isUndefined($scope.user.driversLicenseImage)) return;
+		var image = $scope.user.driversLicenseImage[0];
 		if (image.type !== 'application/msword' && image.type !== 'application/pdf' && image.type !== 'image/jpeg' && image.type !== 'image/jpg') {
 			alert('Unsupported file type.');
 			return;

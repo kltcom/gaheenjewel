@@ -93,6 +93,21 @@ exports.destroy = function (req, res) {
 };
 
 /**
+ * Set a user's description and/or mission statement
+ */
+exports.setAbout = function (req, res) {
+	var id = req.user._id;
+	User.findById(id, function (err, user) {
+		user.description = req.body.description;
+		user.missionStatement = req.body.missionStatement;
+		user.save(function (err) {
+			if (err) return validationError(res, err);
+			res.send(200);
+		});
+	});
+};
+
+/**
  * Set a user's medical conditions
  */
 exports.setMedicalConditions = function (req, res) {

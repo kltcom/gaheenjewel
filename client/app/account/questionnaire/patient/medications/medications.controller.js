@@ -6,7 +6,7 @@ angular.module('gaheenApp').controller('QuestionnairePatientMedicationsCtrl', fu
 		$scope.submitted = true;
 		if (form.$valid) {
 			Auth.setMedications(_.flatten($scope.user.medications, '_id')).then(function () {
-				$location.path('/questionnaire/' + Auth.getCurrentUser().type + '/medicalconditions');
+				$location.path('/questionnaire/patient/medicalconditions');
 			}).catch(function () {
 				$scope.message = '';
 			});

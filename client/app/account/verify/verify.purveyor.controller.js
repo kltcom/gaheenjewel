@@ -20,7 +20,7 @@ angular.module('gaheenApp').controller('VerifyPurveyorCtrl', function ($scope, A
 				businessZipCode: $scope.user.businessZipCode,
 				url: $scope.user.url
 			}).then(function () {
-				$location.path('/questionnaire/' + $scope.user.type + '/medications');
+				$location.path('/questionnaire/purveyor/about');
 			}).catch(function () {
 				$scope.message = '';
 			});

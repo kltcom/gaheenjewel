@@ -63,10 +63,31 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		},
 
 		/**
+		 * Set a user's description and/or mission statement
+		 *
+		 * @param  {String}   description
+		 * @param  {String}   missionStatement
+		 * @param  {Function} callback - optional
+		 * @return {Promise}
+		 */
+		setAbout: function (description, missionStatement, callback) {
+			var cb = callback || angular.noop;
+
+			return User.setAbout({id: currentUser._id}, {
+				description: description,
+				missionStatement: missionStatement
+			}, function (user) {
+				return cb(user);
+			}, function (err) {
+				return cb(err);
+			}).$promise;
+		},
+
+		/**
 		 * Set a user's medical conditions
 		 *
-		 * @param  {Array}    medical conditions
-		 * @param  {Function} callback    - optional
+		 * @param  {Array}    medicalConditions
+		 * @param  {Function} callback - optional
 		 * @return {Promise}
 		 */
 		setMedicalConditions: function (medicalConditions, callback) {
@@ -85,7 +106,7 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		 * Set a user's medications
 		 *
 		 * @param  {Array}    medications
-		 * @param  {Function} callback    - optional
+		 * @param  {Function} callback - optional
 		 * @return {Promise}
 		 */
 		setMedications: function (medications, callback) {
@@ -105,7 +126,7 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		 *
 		 * @param  {String}   oldPassword
 		 * @param  {String}   newPassword
-		 * @param  {Function} callback    - optional
+		 * @param  {Function} callback - optional
 		 * @return {Promise}
 		 */
 		setPassword: function (oldPassword, newPassword, callback) {
@@ -125,7 +146,7 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		 * Set a user's type
 		 *
 		 * @param  {Object}   user
-		 * @param  {Function} callback    - optional
+		 * @param  {Function} callback - optional
 		 * @return {Promise}
 		 */
 		setType: function (user, callback) {
