@@ -50,6 +50,8 @@ a {outline: none !important; border: none !important; color: #51c4d4;}
 .white-bg {background-color: #FFF;}
 .lead-margin {margin-top: 35px;}
 h1 {font-weight: 300; color: #24c668; padding-bottom:35px;}
+h1 {font-size: 3.0em;}
+h4 {font-size: 1.3em;}
 lead {text-align: center;}
 
 .layered-paper {
@@ -362,8 +364,9 @@ lead {text-align: center;}
 	border-color: #e4e6e8 !important;
 }
 
+
 .registration-form form  {
-	width: 54%;
+	
 	margin: 35px auto !important;
 }
 
@@ -391,7 +394,13 @@ lead {text-align: center;}
 	margin-top: 45px !important;}
 
 .green {color: #24c668;}
-	
 
+@media only screen and (max-device-width: 360px) {
+	.navbar-brand {margin-left: 35px;}
+	.navbar-toggle {margin-top: 15px;}	
+	.navbar-collapse {background-color: #f1f1f1; a {color:#263241;}
+	.navbar-right ul {margin-top: -5px !important;}
+	
+}
 
 

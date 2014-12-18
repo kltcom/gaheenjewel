@@ -71,7 +71,7 @@ section {
 .slider-header {
 	font-weight: 300; 
 	text-transform: uppercase; 
-	font-size: 45px;
+	font-size: 3.0em;
 }
 
 .carousel-caption {
@@ -128,7 +128,8 @@ section h3 {
 		
 .discover-tags, .marketplace-tags {
 			display: block;
-			margin-top: -5px;}
+			margin-top: -5px;
+			font-size: 0.9em;}
 			
 #academy h1, #academy h3,  #media h1{
 	color: #FFF;
@@ -154,3 +155,29 @@ section h3 {
 
 #media video {
 	width: 100%;}
+	
+	
+@media only screen and (max-device-width: 980px) {
+.homepage-slider p, .btn-signup, .btn-register-homepage {display: none;}	
+.btn-more-info, .btn-donate {width: 100%; margin-bottom: 10px;}
+.btn-donate {margin-bottom: 0 !important;}
+.slider-header {margin-top: -25px;}
+	
+}
+
+@media only screen and (max-device-width: 768px) {
+	.slider-header {font-size: 2.5em;}
+	
+	}
+	
+@media only screen and (max-device-width: 360px) {
+	.slider-header {
+		font-size: 1.5em;
+		margin-top: -75px;}
+		
+h1 {font-size: 2.0em;}
+h3 {font-size: 1.5em;}
+
+.discover-info, #academy img, .marketplace-info, .btn-facebook, .btn-twitter {margin-bottom: 35px;}
+
+	}
