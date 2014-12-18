@@ -209,6 +209,20 @@ exports.setType = function (req, res) {
 };
 
 /**
+ * Set a user's vehicle images
+ */
+exports.setVehicleImages = function (req, res) {
+	var id = req.user._id;
+	User.findById(id, function (err, user) {
+		user.vehicleImages = req.body.vehicleImages;
+		user.save(function (err) {
+			if (err) return validationError(res, err);
+			res.send(200);
+		});
+	});
+};
+
+/**
  * Get my info
  */
 exports.me = function (req, res, next) {

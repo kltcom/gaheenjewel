@@ -15,6 +15,7 @@ router.put('/:id/medicalconditions', auth.isAuthenticated(), controller.setMedic
 router.put('/:id/medications', auth.isAuthenticated(), controller.setMedications);
 router.put('/:id/password', auth.isAuthenticated(), controller.setPassword);
 router.put('/:id/type', auth.isAuthenticated(), controller.setType);
+router.put('/:id/vehicleimages', auth.isAuthenticated(), controller.setVehicleImages);
 router.get('/:id', auth.isAuthenticated(), controller.show);
 router.post('/', controller.create);
 

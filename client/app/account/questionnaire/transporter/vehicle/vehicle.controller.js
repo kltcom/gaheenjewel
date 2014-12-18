@@ -1,32 +1,29 @@
 'use strict';
 
-angular.module('gaheenApp').controller('QuestionnaireTransporterVehicleCtrl', function ($scope, Auth, $location, $upload) {
+angular.module('gaheenApp').controller('QuestionnaireTransporterVehicleCtrl', function ($scope, Auth, $location, $http, $upload) {
 	$scope.errors = {};
 	$scope.uploads = {};
 	$scope.commit = function (form) {
 		$scope.submitted = true;
 		if (form.$valid) {
-			/*
-			Auth.setAbout({
-				description: $scope.user.description,
-				missionStatement: $scope.user.missionStatement
-			}).then(function () {
-				$location.path('/questionnaire/transporter/vehicle');
+			Auth.setVehicleImages(_.flatten($scope.uploads, 'name')).then(function () {
+				//$location.path('/questionnaire/transporter/vehicle');
 			}).catch(function () {
 				$scope.message = '';
 			});
-			*/
 		}
+	};
+	$scope.delete = function (oldName, newName) {
+		$http.delete('/data/' + newName).success(function () {
+			delete $scope.uploads[oldName];
+		}).error(function (err) {
+		});
 	};
 	$scope.$watch('user.vehicleImages', function () {
 		if (_.isUndefined($scope.user) || _.isUndefined($scope.user.vehicleImages)) return;
 		var images = $scope.user.vehicleImages;
 		for (var i = 0; i < images.length; i++) {
 			var image = images[i];
-			if (image.type !== 'image/jpeg' && image.type !== 'image/jpg') {
-				alert('Unsupported file type.');
-				return;
-			}
 			$scope.uploads[image.name] = {
 				name: '',
 				progress: 0
@@ -46,8 +43,6 @@ angular.module('gaheenApp').controller('QuestionnaireTransporterVehicleCtrl', fu
 			}).success(function (data, status, headers, config) {
 				$scope.uploads[config.file.name].name = data;
 			}).error(function (err) {
-				//$scope.uploads[]
-				//console.log('Error uploading file: ' + err.message || err);
 			});
 		}
 	});
