@@ -39,6 +39,12 @@ angular.module('gaheenApp').factory('User', function ($resource) {
 			params: {
 				controller: 'type'
 			}
+		},
+		setVehicleImages: {
+			method: 'PUT',
+			params: {
+				controller: 'vehicleimages'
+			}
 		}
 	});
 });

@@ -160,6 +160,25 @@ angular.module('gaheenApp').factory('Auth', function Auth($location, $rootScope,
 		},
 
 		/**
+		 * Set a user's vehicle images
+		 *
+		 * @param  {Array}    vehicleImages
+		 * @param  {Function} callback - optional
+		 * @return {Promise}
+		 */
+		setVehicleImages: function (vehicleImages, callback) {
+			var cb = callback || angular.noop;
+
+			return User.setVehicleImages({id: currentUser._id}, {
+				vehicleImages: vehicleImages
+			}, function (user) {
+				return cb(user);
+			}, function (err) {
+				return cb(err);
+			}).$promise;
+		},
+
+		/**
 		 * Get all available info on authenticated user
 		 *
 		 * @return {Object} user
