@@ -22,12 +22,14 @@
 						<br />
 					</div>
 					<div ng-no-file-drop>Drag &amp; Drop is not supported by your browser.</div>
-					<div class="row" ng-repeat="(name, image) in uploads">
-						<div class="col-sm-3"><img class="thumbnail" http-src="/data/{{ image.name }}" ng-if="!_.isEmpty(image.name)" /></div>
+					<div class="row" ng-repeat="image in images">
+						<div class="col-sm-3"><img class="thumbnail" ng-src="{{ image.source }}" /></div>
 						<div class="col-sm-8">
 							<progressbar value="image.progress">{{ image.progress }}%</progressbar>
 						</div>
-						<div class="col-sm-1"><a class="trash" ng-click="delete(name, image.name)" ng-show="image.progress === 100"><span class="glyphicon glyphicon-trash pull-right"></span></a></div>
+						<div class="col-sm-1">
+							<a class="trash" ng-click="delete(image.oldName, image.newName)" ng-show="image.progress === 100"><span class="glyphicon glyphicon-trash pull-right"></span></a>
+						</div>
 					</div>
 					<p class="help-block">{{ message }}</p>
 					<div class="center">

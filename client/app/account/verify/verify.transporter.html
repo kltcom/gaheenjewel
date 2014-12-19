@@ -26,27 +26,7 @@
 			Invalid driver's license number.
 		</p>
 	</div>
-</div><!--
-<div class="form-group" ng-class="{
-	'has-success': form.driversLicenseImage.$valid && submitted,
-	'has-error': form.driversLicenseImage.$invalid && submitted
-}">
-	<div class="input-group">
-		<label class="sr-only" for="driversLicenseImage">Driver's License Image</label>
-		<div class="input-group-addon"><span class="glyphicon glyphicon-picture input-icon-overlay"></span></div>
-		<input type="file" name="driversLicenseImage" placeholder="Driver's License Image" class="form-control input-styles" accept="application/msword,application/pdf,image/jpeg,image/jpg" ng-model="user.driversLicenseImage" ng-file-select="" ng-file-change="" required />
-		<span ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span> <img ng-src="uploadedImage" ng-if="uploadedImage" />
-		<p class="help-block">
-			Upload driver's license (.pdf, .jpg, .doc).
-			<br />
-			<em>* All documents must be scanned. Any photos will be rejected by our verification process.</em>
-		</p>
-		<p class="help-block" ng-show="form.driversLicenseImage.$error.required && submitted">
-			Driver's license image is required.
-		</p>
-	</div>
 </div>
-//-->
 <div class="form-group" ng-class="{
 	'has-success': form.vehicleYear.$valid && submitted,
 	'has-error': form.vehicleYear.$invalid && submitted
@@ -116,13 +96,20 @@
 	</div>
 </div>
 <div class="row">
-	UPLOAD DRIVER'S LICENSE
-	<br />
-	<button type="button" ng-model="user.driversLicenseImage" ng-file-select ng-accept="'application/msword,application/pdf,image/jpeg,image/jpg'">Choose File</button>
-	<span ng-if="uploadInProgress">Upload progress: {{ uploadProgress }}</span> <img http-src="/data/{{ uploadedImage }}" ng-if="uploadedImage" />
-	<p class="help-block">
-		Upload driver's license (.pdf, .jpg, .doc).
+	<div class="col-sm-12">
+		UPLOAD DRIVER'S LICENSE
 		<br />
-		<em>* All documents must be scanned. Any photos will be rejected by our verification process.</em>
-	</p>
+		<button type="button" ng-model="user.driversLicenseImage" ng-file-select ng-accept="'image/jpeg,image/jpg'">Choose File</button>
+		<div class="row" ng-if="image">
+			<div class="col-sm-3"><img class="thumbnail" ng-src="{{ image.source }}" /></div>
+			<div class="col-sm-9">
+				<progressbar value="image.progress">{{ image.progress }}%</progressbar>
+			</div>
+		</div>
+		<p class="help-block">
+			Upload driver's license (.jpeg, .jpg).
+			<br />
+			<em>* All documents must be scanned. Any photos will be rejected by our verification process.</em>
+		</p>
+	</div>
 </div>

@@ -9,7 +9,7 @@ angular.module('gaheenApp').controller('VerifyTransporterCtrl', function ($scope
 				type: $scope.user.type,
 				driversName: $scope.user.driversName,
 				driversLicenseNumber: $scope.user.driversLicenseNumber,
-				driversLicenseImage: $scope.uploadedImage,
+				driversLicenseImage: $scope.image.newName,
 				vehicleMake: $scope.user.vehicleMake,
 				vehicleModel: $scope.user.vehicleModel,
 				vehicleYear: $scope.user.vehicleYear,
@@ -23,14 +23,23 @@ angular.module('gaheenApp').controller('VerifyTransporterCtrl', function ($scope
 		}
 	};
 	$scope.$watch('user.driversLicenseImage', function () {
-		if (_.isUndefined($scope.user) || _.isUndefined($scope.user.driversLicenseImage)) return;
+		if (_.isUndefined($scope.user) || _.isUndefined($scope.user.driversLicenseImage) || !_.isArray($scope.user.driversLicenseImage)) return;
 		var image = $scope.user.driversLicenseImage[0];
-		if (image.type !== 'application/msword' && image.type !== 'application/pdf' && image.type !== 'image/jpeg' && image.type !== 'image/jpg') {
-			alert('Unsupported file type.');
-			return;
-		}
-		$scope.uploadInProgress = true;
-		$scope.uploadProgress = 0;
+		$scope.image = {
+			newName: '',
+			oldName: image.name,
+			progress: 0,
+			source: ''
+		};
+		var reader = new FileReader();
+		reader.onload = function (e) {
+			setTimeout(function () {
+				$scope.$apply(function () {
+					$scope.image.source = e.target.result;
+				});
+			}, 1);
+		};
+		reader.readAsDataURL(image);
 		$scope.upload = $upload.upload({
 			data: {
 				id: Auth.getCurrentUser().id
@@ -42,15 +51,10 @@ angular.module('gaheenApp').controller('VerifyTransporterCtrl', function ($scope
 			method: 'POST',
 			url: '/upload'
 		}).progress(function (event) {
-			$scope.uploadProgress = Math.min(100, parseInt(100.0 * event.loaded / event.total));
-			//console.log('progress: ' + parseInt(100.0 * evt.loaded / evt.total) + '% file :' + evt.config.file.name);
+			$scope.image.progress = Math.min(100, parseInt(100.0 * event.loaded / event.total));
 		}).success(function (data, status, headers, config) {
-			//console.log('file ' + config.file.name + 'is uploaded successfully. Response: ' + data);
-			$scope.uploadInProgress = false;
-			$scope.uploadedImage = data;
+			$scope.image.newName = data;
 		}).error(function (err) {
-			$scope.uploadInProgress = false;
-			//console.log('Error uploading file: ' + err.message || err);
 		});
 	});
 });

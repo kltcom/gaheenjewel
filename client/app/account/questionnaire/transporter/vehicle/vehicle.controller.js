@@ -2,11 +2,11 @@
 
 angular.module('gaheenApp').controller('QuestionnaireTransporterVehicleCtrl', function ($scope, Auth, $location, $http, $upload) {
 	$scope.errors = {};
-	$scope.uploads = {};
+	$scope.images = [];
 	$scope.commit = function (form) {
 		$scope.submitted = true;
 		if (form.$valid) {
-			Auth.setVehicleImages(_.flatten($scope.uploads, 'name')).then(function () {
+			Auth.setVehicleImages(_.flatten($scope.images, 'newName')).then(function () {
 				//$location.path('/questionnaire/transporter/vehicle');
 			}).catch(function () {
 				$scope.message = '';
@@ -15,22 +15,37 @@ angular.module('gaheenApp').controller('QuestionnaireTransporterVehicleCtrl', fu
 	};
 	$scope.delete = function (oldName, newName) {
 		$http.delete('/data/' + newName).success(function () {
-			delete $scope.uploads[oldName];
+			var i = _.findIndex($scope.images, {newName: newName});
+			$scope.images.splice(i, 1);
 		}).error(function (err) {
 		});
 	};
 	$scope.$watch('user.vehicleImages', function () {
 		if (_.isUndefined($scope.user) || _.isUndefined($scope.user.vehicleImages)) return;
+		var id = Auth.getCurrentUser().id;
 		var images = $scope.user.vehicleImages;
 		for (var i = 0; i < images.length; i++) {
 			var image = images[i];
-			$scope.uploads[image.name] = {
-				name: '',
-				progress: 0
-			};
+			$scope.images.push({
+				newName: '',
+				oldName: image.name,
+				progress: 0,
+				source: ''
+			});
+			var reader = new FileReader();
+			reader.onload = function (i) {
+				return function (e) {
+					setTimeout(function () {
+						$scope.$apply(function () {
+							$scope.images[i].source = e.target.result;
+						});
+					}, 1);
+				}
+			}(i);
+			reader.readAsDataURL(image);
 			$scope.upload = $upload.upload({
 				data: {
-					id: Auth.getCurrentUser().id
+					id: id
 				},
 				file: image,
 				headers: {
@@ -39,9 +54,11 @@ angular.module('gaheenApp').controller('QuestionnaireTransporterVehicleCtrl', fu
 				method: 'POST',
 				url: '/upload'
 			}).progress(function (event) {
-				$scope.uploads[event.config.file.name].progress = Math.min(100, parseInt(100.0 * event.loaded / event.total));
+				var i = _.findIndex($scope.images, {oldName: event.config.file.name});
+				$scope.images[i].progress = Math.min(100, parseInt(100.0 * event.loaded / event.total));
 			}).success(function (data, status, headers, config) {
-				$scope.uploads[config.file.name].name = data;
+				var i = _.findIndex($scope.images, {oldName: config.file.name});
+				$scope.images[i].newName = data;
 			}).error(function (err) {
 			});
 		}
