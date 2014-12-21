@@ -37,55 +37,55 @@ section {
 	padding: 55px 0 55px 0;
 	min-height: 450px;
 	}
-	
+
 	#movement {
 		background: #FFF;
 		}
-		
+
 		#discover, #marketplace {
 			background: #f1f1f1;
 		}
-		
+
 	#main-slider {
 			padding: 0 !important;
 			min-height: 0 !important;
-			} 
+			}
 
 #academy, #media {
 	background: #24c668;
 	}
-	
+
 	.footer-homepage {
 		margin-top: 0 !important;
 		background-color: #263241;
 		padding-bottom: 65px;
 		}
-		
+
 		.footer-homepage h1 {
 			color: #FFF;
 			text-transform: uppercase;
 			}
-		
+
 		.homepage-lead {text-align: justify !important;}
 
 .slider-header {
-	font-weight: 300; 
-	text-transform: uppercase; 
+	font-weight: 300;
+	text-transform: uppercase;
 	font-size: 3.0em;
 }
 
 .carousel-caption {
-	top: 80px;
+	top: 10px;
 }
 
 .homepage-slider p {
 	color: #FFF;
-	font-size: 22px;
-	line-height: 30px;
+	font-size: 14px;
+	line-height: 22px;
 	font-weight: 300;
-	padding-bottom: 35px;
+	padding-bottom: 10px;
 	}
-	
+
 	.btn-signup, .btn-register-homepage {
 		width: 250px;
 		border-radius: 5px;
@@ -94,51 +94,51 @@ section {
 		font-size: 20px;
 		padding: 12.5px;
 		}
-		
+
 		.btn-more-info, .btn-donate {
 			width: 49%;
 			color: #fff;
 			padding: 8px;
 			text-transform: uppercase;
 			}
-	
+
 	.btn-signup, .btn-more-info {background-color: #596371;}
 	.btn-register-homepage, .btn-donate {background-color: #24c668;}
 
 section h1 {text-align: center; text-transform: uppercase;}
 section h3 {
-	text-align: center; 
+	text-align: center;
 	font-weight: 300;
 	margin-top: -25px;
 	padding-bottom: 35px;
 	}
-	
+
 	.discover-info, .marketplace-info{
 		background: #FFF;
 		padding: 25px;
 		padding-bottom: 45px;
 		border: 1px solid #d9dbdd;
 		}
-	
+
 	.discover-info p, .marketplace-info p {
 		padding-bottom: 25px;
 		line-height: 24px;
 		font-size: 1.0em;
 		margin-top: 15px;}
-		
+
 .discover-tags, .marketplace-tags {
 			display: block;
 			margin-top: -5px;
 			font-size: 0.9em;}
-			
+
 #academy h1, #academy h3,  #media h1{
 	color: #FFF;
 	}
-	
+
 .btn-facebook, .btn-twitter, .btn-youtube {
 	padding: 10px;
-	width: 65%;}	
-	
+	width: 65%;}
+
 .btn-facebook {
 	background-color: #5d82d1;
 }
@@ -146,7 +146,7 @@ section h3 {
 .btn-twitter {
 	background-color: #40bff5;
 	}
-	
+
 .btn-youtube {
 	background-color: #ef4e41;
 	}
@@ -155,26 +155,26 @@ section h3 {
 
 #media video {
 	width: 100%;}
-	
-	
+
+
 @media only screen and (max-device-width: 980px) {
-.homepage-slider p, .btn-signup, .btn-register-homepage {display: none;}	
+.homepage-slider p, .btn-signup, .btn-register-homepage {display: none;}
 .btn-more-info, .btn-donate {width: 100%; margin-bottom: 10px;}
 .btn-donate {margin-bottom: 0 !important;}
 .slider-header {margin-top: -25px;}
-	
+
 }
 
 @media only screen and (max-device-width: 768px) {
 	.slider-header {font-size: 2.5em;}
-	
+
 	}
-	
+
 @media only screen and (max-device-width: 360px) {
 	.slider-header {
 		font-size: 1.5em;
 		margin-top: -75px;}
-		
+
 h1 {font-size: 2.0em;}
 h3 {font-size: 1.5em;}
 

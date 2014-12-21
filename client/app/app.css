@@ -69,12 +69,12 @@ lead {text-align: center;}
 	font-size: 24px;
 	padding-top: 35px;
 	}
-	
+
 .seperator-1 {
 	border-bottom: 2px solid #ecedee;
 	margin-bottom: 35px;
 	}
-	
+
 .input-icon-overlay {
 	color: #a3a9b0;
 }
@@ -109,13 +109,13 @@ lead {text-align: center;}
 	margin: 0;
 	padding: 0;
 	}
-	
+
 	.nav-color ul, .onboarding-hr ul {
 		margin: 0 !important;
 		padding: 0 !important;
 		list-style: none !important;
 		}
-	
+
 .nav-color li {
 		display: inline-block;
 		width: 4%;
@@ -280,7 +280,7 @@ lead {text-align: center;}
 
 .navbar-default .navbar-nav > .active > a {
 	background: none !important;}
-	
+
 .navbar-nav { margin-top: 8px !important;}
 
 .onboarding-hr li {
@@ -288,11 +288,11 @@ lead {text-align: center;}
 		width: 4%;
 		height: 4px;
 	}
-	
+
 .onboarding-hr li:nth-child(1) {
   background:#24c668;
   width: 50% !important;
-  
+
 }
 
 .onboarding-hr li:nth-child(2) {
@@ -307,11 +307,11 @@ lead {text-align: center;}
 		width: 4%;
 		height: 4px;
 	}
-	
+
 .onboarding-hr-step1 li:nth-child(1) {
   background:#24c668;
   width: 15% !important;
-  
+
 }
 
 .onboarding-hr-step1 li:nth-child(2) {
@@ -352,7 +352,7 @@ lead {text-align: center;}
 	background-color: #f6f6f6;
 	border-color: #e4e6e8;
 }
-	
+
 .input-styles {
 	border-left: none !important;
 	background-color: #f6f6f6;
@@ -366,7 +366,7 @@ lead {text-align: center;}
 
 
 .registration-form form  {
-	
+
 	margin: 35px auto !important;
 }
 
@@ -376,10 +376,10 @@ lead {text-align: center;}
 	font-size: 15px;
 	text-transform: uppercase;
 	}
-	
-	
+
+
 /*Carousel*/
-	
+
 .ng-scope img {width: 100% !important;}
 
 /*Icon Sizes*/
@@ -397,10 +397,10 @@ lead {text-align: center;}
 
 @media only screen and (max-device-width: 360px) {
 	.navbar-brand {margin-left: 35px;}
-	.navbar-toggle {margin-top: 15px;}	
-	.navbar-collapse {background-color: #f1f1f1; a {color:#263241;}
+	.navbar-toggle {margin-top: 15px;}
+	.navbar-collapse {background-color: #f1f1f1;} a {color:#263241;}
 	.navbar-right ul {margin-top: -5px !important;}
-	
+
 }
 
 
