@@ -17,4 +17,5 @@ angular.module('gaheenApp').controller('MainCtrl', function ($scope) {
 			image: '/assets/images/placeholder-6.jpg'
 		}
 	];
-});
+
+	});
