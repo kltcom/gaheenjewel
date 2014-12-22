@@ -16,7 +16,7 @@ exports.upload = function (req, res) {
 		var name = uuid.v4() + extension;
 		var newPath = config.root + '/server/data/' + fields['id'] + '/' + name;
 
-		if (type !== 'image/jpeg' && type !== 'image/jpg') {
+		if (type !== 'image/gif' && type !== 'image/jpeg' && type !== 'image/jpg' && type !== 'image/png') {
 			fs.unlink(oldPath);
 			return res.status(400).send(type);
 		}

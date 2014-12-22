@@ -99,7 +99,7 @@
 	<div class="col-sm-12">
 		UPLOAD DRIVER'S LICENSE
 		<br />
-		<button type="button" ng-model="user.driversLicenseImage" ng-file-select ng-accept="'image/jpeg,image/jpg'">Choose File</button>
+		<button type="button" ng-model="user.driversLicenseImage" ng-file-select ng-accept="'image/gif,image/jpeg,image/jpg,image/png'">Choose File</button>
 		<div class="row" ng-if="image">
 			<div class="col-sm-3"><img class="thumbnail" ng-src="{{ image.source }}" /></div>
 			<div class="col-sm-9">
@@ -107,7 +107,7 @@
 			</div>
 		</div>
 		<p class="help-block">
-			Upload driver's license (.jpeg, .jpg).
+			Upload driver's license (.gif, .jpeg, .jpg, .png).
 			<br />
 			<em>* All documents must be scanned. Any photos will be rejected by our verification process.</em>
 		</p>
