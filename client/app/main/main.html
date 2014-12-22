@@ -1,166 +1,138 @@
 <div ng-include="'components/navbar/navbar.html'"></div>
-
-<section id="main-slider">
-
-<div>
-  <div id="slides_control">
-    <div>
-      <carousel interval="myInterval">
-        <slide ng-repeat="slide in slides" active="slide.active">
-          <img ng-src="{{slide.image}}">
-          <div class="carousel-caption homepage-slider">
-            <h2 class="slider-header green">Join The Revolution</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.  Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <a href="/login" class="btn btn-signup">Sign In</a>
-            <a href="/signup" class="btn btn-register-homepage">Register</a>
-          </div>
-        </slide>
-      </carousel>
-    </div>
-  </div>
-</div>
-
+<section id="slider">
+	<div>
+		<div>
+			<div>
+				<carousel interval="myInterval">
+					<slide>
+						<div id="slider-videowrapper">
+							<video width="100%" autoplay loop class="embed-responsive-item">
+								<source src="/assets/video/intro-vid.mp4" type="video/mp4">
+							</video>
+						</div>
+						<div class="carousel-caption homepage-slider">
+							<h2 class="slider-header green">Join The Revolution</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<a href="/login" class="btn btn-signup">Sign In</a> <a href="/signup" class="btn btn-register-homepage">Register</a>
+						</div>
+					</slide>
+					<slide ng-repeat="slide in slides" active="slide.active">
+						<img ng-src="{{slide.image}}">
+						<div class="carousel-caption homepage-slider">
+							<h2 class="slider-header green">Join The Revolution</h2>
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+							<a href="/login" class="btn btn-signup">Sign In</a> <a href="/signup" class="btn btn-register-homepage">Register</a>
+						</div>
+					</slide>
+				</carousel>
+			</div>
+		</div>
+	</div>
 </section>
-
-
-
 <section id="discover">
 	<div class="container">
-    	<h1>Discover New Products</h1>
-        <h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
-        
-        <div class="col-sm-4">
-        	<img src="../assets/images/strain-1.jpg">
-            <div class="discover-info">
-            	<h4>OG Kush</h4>
-                <span class="discover-tags"><a href="#">#OG Kush</a> : <a href="#">#Indica</a> : <a href="#">SDG</a></span>
-                <p>OG Kush makes up the genetic backbone of West Coast cannabis varieties, but in spite of its ubiquity, its origins remain a debatable mster.  Popular myth maints that Chemdawg...</p>
-                
-                <a href="#" class="btn btn-more-info">More Info</a>
-                <a href="#" class="btn btn-donate">Donate</a>
-            </div>
-        </div><!-- col-sm-4-->
-        
-         <div class="col-sm-4">
-        	<img src="../assets/images/strain-2.jpg">
-            <div class="discover-info">
-            	<h4>Blue Dream</h4>
-                <span class="discover-tags"><a href="#">#OG Kush</a> : <a href="#">#Indica</a> : <a href="#">SDG</a></span>
-                <p>OG Kush makes up the genetic backbone of West Coast cannabis varieties, but in spite of its ubiquity, its origins remain a debatable mster.  Popular myth maints that Chemdawg...</p>
-                
-                <a href="#" class="btn btn-more-info">More Info</a>
-                <a href="#" class="btn btn-donate">Donate</a>
-            </div>
-        </div><!-- col-sm-4-->
-        
-         <div class="col-sm-4">
-        	<img src="../assets/images/strain-3.jpg">
-            <div class="discover-info">
-            	<h4>Grandaddy</h4>
-                <span class="discover-tags"><a href="#">#OG Kush</a> : <a href="#">#Indica</a> : <a href="#">SDG</a></span>
-                <p>OG Kush makes up the genetic backbone of West Coast cannabis varieties, but in spite of its ubiquity, its origins remain a debatable mster.  Popular myth maints that Chemdawg...</p>
-                
-                <a href="#" class="btn btn-more-info">More Info</a>
-                <a href="#" class="btn btn-donate">Donate</a>
-            </div>
-        </div><!-- col-sm-4-->
-        
-    
-    </div><!-- container -->
-
-
+		<h1>Discover New Products</h1>
+		<h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
+		<div class="col-sm-4">
+			<img src="../assets/images/strain-1.jpg">
+			<div class="discover-info">
+				<h4>OG Kush</h4>
+				<span class="discover-tags"><a href="#">#OG Kush</a> : <a href="#">#Indica</a> : <a href="#">SDG</a></span>
+				<p>OG Kush makes up the genetic backbone of West Coast cannabis varieties, but in spite of its ubiquity, its origins remain a debatable mster. Popular myth maints that Chemdawg...</p>
+				<a href="#" class="btn btn-more-info">More Info</a> <a href="#" class="btn btn-donate">Donate</a>
+			</div>
+		</div>
+		<!-- col-sm-4-->
+		<div class="col-sm-4">
+			<img src="../assets/images/strain-2.jpg">
+			<div class="discover-info">
+				<h4>Blue Dream</h4>
+				<span class="discover-tags"><a href="#">#OG Kush</a> : <a href="#">#Indica</a> : <a href="#">SDG</a></span>
+				<p>OG Kush makes up the genetic backbone of West Coast cannabis varieties, but in spite of its ubiquity, its origins remain a debatable mster. Popular myth maints that Chemdawg...</p>
+				<a href="#" class="btn btn-more-info">More Info</a> <a href="#" class="btn btn-donate">Donate</a>
+			</div>
+		</div>
+		<!-- col-sm-4-->
+		<div class="col-sm-4">
+			<img src="../assets/images/strain-3.jpg">
+			<div class="discover-info">
+				<h4>Grandaddy</h4>
+				<span class="discover-tags"><a href="#">#OG Kush</a> : <a href="#">#Indica</a> : <a href="#">SDG</a></span>
+				<p>OG Kush makes up the genetic backbone of West Coast cannabis varieties, but in spite of its ubiquity, its origins remain a debatable mster. Popular myth maints that Chemdawg...</p>
+				<a href="#" class="btn btn-more-info">More Info</a> <a href="#" class="btn btn-donate">Donate</a>
+			</div>
+		</div>
+		<!-- col-sm-4-->
+	</div>
+	<!-- container -->
 </section><!-- section -->
-
 <section id="academy">
 	<div class="container">
-    	<h1>Subscribe To The Academy</h1>
-        <h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
-        
-       <div class="col-sm-4">
-       		<a href="#"><img src="../assets/images/academy-1.jpg"></a>
-       </div>
-       
-       <div class="col-sm-4">
-       		<a href="#"><img src="../assets/images/academy-2.jpg"></a>
-       </div>
-       
-       <div class="col-sm-4">
-       		<a href="#"><img src="../assets/images/academy-3.jpg"></a>
-       </div>
-        
-       
-        
-    </div><!-- container -->
+		<h1>Subscribe To The Academy</h1>
+		<h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
+		<div class="col-sm-4">
+			<a href="#"><img src="../assets/images/academy-1.jpg"></a>
+		</div>
+		<div class="col-sm-4">
+			<a href="#"><img src="../assets/images/academy-2.jpg"></a>
+		</div>
+		<div class="col-sm-4">
+			<a href="#"><img src="../assets/images/academy-3.jpg"></a>
+		</div>
+	</div>
+	<!-- container -->
 </section><!-- section -->
-
 <section id="marketplace">
 	<div class="container">
-    
-    <h1>Manage Your Own Market</h1>
-    <h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
-    
-    	
-        <div class="col-sm-4">
-        	<img src="../assets/images/marketplace-1.jpg">
-            <div class="marketplace-info">
-            	<h4>Sonoma Diamond Group</h4>
-                <span class="marketplace-tags"><a href="#">Purveyor: San Francisco, CA</a></span>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                
-                <a href="#" class="btn btn-more-info">More Info</a>
-                <a href="#" class="btn btn-donate">Donate</a>
-            </div>
-        </div><!-- col-sm-4-->
-        
-        <div class="col-sm-4">
-        	<img src="../assets/images/marketplace-2.jpg">
-            <div class="marketplace-info">
-            	<h4>Kiva Confections</h4>
-                <span class="marketplace-tags"><a href="#">Manufacturer: San Francisco, CA</a></span>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                
-                <a href="#" class="btn btn-more-info">More Info</a>
-                <a href="#" class="btn btn-donate">Donate</a>
-            </div>
-        </div><!-- col-sm-4-->
-        
-        <div class="col-sm-4">
-        	<img src="../assets/images/marketplace-3.jpg">
-            <div class="marketplace-info">
-            	<h4>Harborshide Collective</h4>
-                <span class="marketplace-tags"><a href="#">Dispensary: Oakland, CA</a></span>
-                <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                
-                <a href="#" class="btn btn-more-info">More Info</a>
-                <a href="#" class="btn btn-donate">Donate</a>
-            </div>
-        </div><!-- col-sm-4-->
-        
-    	
-    </div><!-- container -->
-
+		<h1>Manage Your Own Market</h1>
+		<h3>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h3>
+		<div class="col-sm-4">
+			<img src="../assets/images/marketplace-1.jpg">
+			<div class="marketplace-info">
+				<h4>Sonoma Diamond Group</h4>
+				<span class="marketplace-tags"><a href="#">Purveyor: San Francisco, CA</a></span>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<a href="#" class="btn btn-more-info">More Info</a> <a href="#" class="btn btn-donate">Donate</a>
+			</div>
+		</div>
+		<!-- col-sm-4-->
+		<div class="col-sm-4">
+			<img src="../assets/images/marketplace-2.jpg">
+			<div class="marketplace-info">
+				<h4>Kiva Confections</h4>
+				<span class="marketplace-tags"><a href="#">Manufacturer: San Francisco, CA</a></span>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<a href="#" class="btn btn-more-info">More Info</a> <a href="#" class="btn btn-donate">Donate</a>
+			</div>
+		</div>
+		<!-- col-sm-4-->
+		<div class="col-sm-4">
+			<img src="../assets/images/marketplace-3.jpg">
+			<div class="marketplace-info">
+				<h4>Harborshide Collective</h4>
+				<span class="marketplace-tags"><a href="#">Dispensary: Oakland, CA</a></span>
+				<p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+				<a href="#" class="btn btn-more-info">More Info</a> <a href="#" class="btn btn-donate">Donate</a>
+			</div>
+		</div>
+		<!-- col-sm-4-->
+	</div>
+	<!-- container -->
 </section><!-- section -->
-
-
-
 <footer class="footer footer-homepage">
-  <div class="container">
-  <h1>Follow The Movement</h1>
-  
-  <div class="col-sm-4">
-  	<button class="btn btn-facebook"><i class="fa fa-facebook fa-lg white"></i> <span class="btn-txt">11200</span> <span class="white">FANS</span></button>
-  </div><!-- col-sm-4-->
-  
-  <div class="col-sm-4">
-  	<button class="btn btn-twitter"><i class="fa fa-twitter fa-lg white"></i> <span class="btn-txt">770</span> <span class="white">FANS</span></button>
-  </div><!-- col-sm-4-->
-  
-  <div class="col-sm-4">
-  	<button class="btn btn-youtube"><i class="fa fa-youtube-play fa-lg white"></i> <span class="btn-txt">200</span> <span class="white">FANS</span></button>
-  </div><!-- col-sm-4-->
-  
-      
-  </div>
+	<div class="container">
+		<h1>Follow The Movement</h1>
+		<div class="col-sm-4">
+			<button class="btn btn-facebook"><i class="fa fa-facebook fa-lg white"></i> <span class="btn-txt">11200</span> <span class="white">FANS</span></button>
+		</div>
+		<!-- col-sm-4-->
+		<div class="col-sm-4">
+			<button class="btn btn-twitter"><i class="fa fa-twitter fa-lg white"></i> <span class="btn-txt">770</span> <span class="white">FANS</span></button>
+		</div>
+		<!-- col-sm-4-->
+		<div class="col-sm-4">
+			<button class="btn btn-youtube"><i class="fa fa-youtube-play fa-lg white"></i> <span class="btn-txt">200</span> <span class="white">FANS</span></button>
+		</div>
+		<!-- col-sm-4-->
+	</div>
 </footer>
-
-

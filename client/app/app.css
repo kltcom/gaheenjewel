@@ -396,7 +396,7 @@ lead {text-align: center;}
 .green {color: #24c668;}
 
 @media only screen and (max-device-width: 360px) {
-	.navbar-brand {margin-left: 35px;}
+	.navbar-brand {margin-left: 0;}
 	.navbar-toggle {margin-top: 15px;}
 	.navbar-collapse {background-color: #f1f1f1;} a {color:#263241;}
 	.navbar-right ul {margin-top: -5px !important;}

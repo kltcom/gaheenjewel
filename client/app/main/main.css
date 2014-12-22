@@ -46,10 +46,15 @@ section {
 			background: #f1f1f1;
 		}
 
-	#main-slider {
+	#slider {
 			padding: 0 !important;
 			min-height: 0 !important;
 			}
+
+	#slider-videowrapper {
+		overflow: hidden;
+		height: 332px;
+	}
 
 #academy, #media {
 	background: #24c668;
