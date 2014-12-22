@@ -52,8 +52,7 @@ section {
 			}
 
 	#slider-videowrapper {
-		overflow: hidden;
-		height: 332px;
+		height: auto !important;
 	}
 
 #academy, #media {
@@ -160,6 +159,11 @@ section h3 {
 
 #media video {
 	width: 100%;}
+	
+	
+	#video-media {}
+	
+	.main-video {height: auto !important;}
 
 
 @media only screen and (max-device-width: 980px) {
