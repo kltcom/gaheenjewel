@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gaheenApp').controller('MainCtrl', function ($scope) {
-	$scope.myInterval = 3000;
+	$scope.myInterval = -1;
 	$scope.slides = [
 		{
 			image: '/assets/images/placeholder-1.jpg'
