@@ -22,7 +22,7 @@ angular.module('gaheenApp').controller('VerifyDispensaryCtrl', function ($scope,
 				businessFax: $scope.user.businessFax,
 				url: $scope.user.url
 			}).then(function () {
-				$location.path('/questionnaire/' + $scope.user.type + '/medications');
+				//$location.path('/questionnaire/dispensary/medications');
 			}).catch(function () {
 				$scope.message = '';
 			});

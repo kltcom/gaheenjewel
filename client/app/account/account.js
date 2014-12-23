@@ -65,6 +65,11 @@ angular.module('gaheenApp').config(function ($stateProvider) {
 		templateUrl: 'app/account/questionnaire/patient/strains/strains.html',
 		controller: 'QuestionnairePatientStrainsCtrl',
 		authenticate: true
+	}).state('questionnaire-physician-about', {
+		url: '/questionnaire/physician/about',
+		templateUrl: 'app/account/questionnaire/physician/about/about.html',
+		controller: 'QuestionnairePhysicianAboutCtrl',
+		authenticate: true
 	}).state('questionnaire-purveyor-about', {
 		url: '/questionnaire/purveyor/about',
 		templateUrl: 'app/account/questionnaire/purveyor/about/about.html',

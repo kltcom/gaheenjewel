@@ -22,7 +22,7 @@ angular.module('gaheenApp').controller('VerifyPhysicianCtrl', function ($scope, 
 				businessFax: $scope.user.businessFax,
 				url: $scope.user.url
 			}).then(function () {
-				$location.path('/questionnaire/' + $scope.user.type + '/medications');
+				$location.path('/questionnaire/physician/about');
 			}).catch(function () {
 				$scope.message = '';
 			});

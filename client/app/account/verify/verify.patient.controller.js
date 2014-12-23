@@ -19,7 +19,7 @@ angular.module('gaheenApp').controller('VerifyPatientCtrl', function ($scope, Au
 				state: $scope.user.state,
 				zipCode: $scope.user.zipCode
 			}).then(function () {
-				$location.path('/questionnaire/' + $scope.user.type + '/medications');
+				$location.path('/questionnaire/patient/medications');
 			}).catch(function () {
 				$scope.message = '';
 			});

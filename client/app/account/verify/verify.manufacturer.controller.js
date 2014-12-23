@@ -20,7 +20,7 @@ angular.module('gaheenApp').controller('VerifyManufacturerCtrl', function ($scop
 				businessZipCode: $scope.user.businessZipCode,
 				url: $scope.user.url
 			}).then(function () {
-				$location.path('/questionnaire/' + $scope.user.type + '/medications');
+				//$location.path('/questionnaire/' + $scope.user.type + '/medications');
 			}).catch(function () {
 				$scope.message = '';
 			});
