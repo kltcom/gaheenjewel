@@ -2,10 +2,12 @@
 <module type="WEB_MODULE" version="4">
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$" />
+    <content url="file://$MODULE_DIR$">
+      <excludeFolder url="file://$MODULE_DIR$/dist" />
+      <excludeFolder url="file://$MODULE_DIR$/node_modules" />
+    </content>
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="node_modules" level="project" />
-    <orderEntry type="library" name="express-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="jQuery" level="application" />
     <orderEntry type="library" name="Lo-Dash" level="application" />
     <orderEntry type="library" name="mongoose-DefinitelyTyped" level="application" />
@@ -18,5 +20,9 @@
     <orderEntry type="library" name="angular-ui-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="angular-ui-bootstrap-DefinitelyTyped" level="application" />
     <orderEntry type="library" name="angular-file-upload-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="express-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="angularjs-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="lodash-DefinitelyTyped" level="application" />
+    <orderEntry type="library" name="Node.js v0.12.4 Core Modules" level="application" />
   </component>
 </module>

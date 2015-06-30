@@ -5,7 +5,7 @@
 'use strict';
 
 var errors = require('./components/errors');
-var userController = require('./api/verificationToken/verificationToken.controller');
+var controller = require('./api/verificationtoken/verificationtoken.controller');
 var upload = require('./upload/upload.controller');
 
 module.exports = function (app) {
@@ -21,11 +21,13 @@ module.exports = function (app) {
 	// Undefined assets or api routes that should return a 404
 	app.route('/:url(api|auth|components|app|bower_components|assets|upload|data)/*').get(errors[404]);
 
-	app.get('/verifyUser/:token', function (req, res, next) {
+	app.get('/verifyuser/:token', function (req, res, next) {
 		console.log('here in verify user');
 		var token = req.params.token;
-		userController.verifyUser(token, res, function (err) {
-			if (err) return res.redirect("verification-failure");
+		controller.verifyUser(token, res, function (err) {
+			if (err) {
+				return res.redirect("/verificationfailure");
+			}
 			res.redirect("/verify");
 		});
 	});

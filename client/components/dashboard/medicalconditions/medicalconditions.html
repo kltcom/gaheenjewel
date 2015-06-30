@@ -1,8 +1,13 @@
-<div class="col-lg-12 medical-conditions-div" ng-controller="MedicalconditionsCtrl">
+<div class="col-lg-12 medical-conditions-div" ng-controller="DashboardMedicalConditionsCtrl">
 	<span class="glyphicon glyphicon-folder-open"></span>
 	<span>Medical Conditions</span>
 	<span class="glyphicon glyphicon-plus"></span>
 	<hr/>
+	<p ng-repeat-start="medicalCondition in getCurrentUser().medicalConditions">
+		<span>{{medicalCondition.name}}</span> <span class="glyphicon glyphicon-chevron-down"></span>
+	</p>
+	<hr ng-repeat-end/>
+	<!--
 	<p>
 		<span>Muscle Spasms (1) </span> <span class="glyphicon glyphicon-chevron-down"></span>
 	</p>
@@ -28,4 +33,5 @@
 		<span>Appetite Loss (0) </span><span class="glyphicon glyphicon-chevron-down"></span>
 	</p>
 	<hr/>
+	-->
 </div>

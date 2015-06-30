@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('gaheenApp', [
-	'angularFileUpload', 'angular.img', 'ngCookies', 'ngResource', 'ngSanitize', 'ngTagsInput', 'ui.bootstrap', 'ui.router', 'ui.utils', 'match'
+	'angular.img', 'ngCookies', 'ngFileUpload', 'ngResource', 'ngSanitize', 'ngTagsInput', 'ui.bootstrap', 'ui.router', 'ui.utils', 'match'
 ]).config(function ($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider) {
 	$urlRouterProvider.otherwise('/');
 	$locationProvider.html5Mode(true);
@@ -11,7 +11,9 @@ angular.module('gaheenApp', [
 		// Add authorization token to headers
 		request: function (config) {
 			config.headers = config.headers || {};
-			if ($cookieStore.get('token')) config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
+			if ($cookieStore.get('token')) {
+				config.headers.Authorization = 'Bearer ' + $cookieStore.get('token');
+			}
 			return config;
 		},
 
@@ -23,14 +25,18 @@ angular.module('gaheenApp', [
 				$cookieStore.remove('token');
 				return $q.reject(response);
 			}
-			else return $q.reject(response);
+			else {
+				return $q.reject(response);
+			}
 		}
 	};
 }).run(function ($rootScope, $location, Auth) {
 	// Redirect to login if route requires auth and you're not logged in
 	$rootScope.$on('$stateChangeStart', function (event, next) {
 		Auth.isLoggedInAsync(function (loggedIn) {
-			if (next.authenticate && !loggedIn) $location.path('/login');
+			if (next.authenticate && !loggedIn) {
+				$location.path('/login');
+			}
 		});
 	});
 });

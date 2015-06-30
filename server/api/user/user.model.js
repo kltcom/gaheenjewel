@@ -31,7 +31,7 @@ var userSchema = new Schema({
 	zipCode: Number,
 	medications: [
 		{
-			ref: 'Drug',
+			ref: 'MedicalCondition',
 			type: Schema.Types.ObjectId
 		}
 	],
