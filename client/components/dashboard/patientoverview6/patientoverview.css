@@ -1,0 +1,21 @@
+.patient-overview-div{
+	margin-top: 20px;
+	border: 1px solid rgba(0,0,0,0.2);
+	background-color: #fff;
+	padding:15px;
+}
+.patient-overview-div .glyphicon-search{
+	background-color: #000;
+	height: 22px;
+	width: 22px;
+	text-align: center;
+	padding-top: 4px;
+	color: #fff;
+}
+.patient-overview-div .glyphicon-pencil{
+	float:right;
+	margin-top:3px;
+}
+.patient-overview-div p{
+	font-size:11px;
+}
