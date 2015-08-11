@@ -269,6 +269,24 @@ exports.me = function (req, res, next) {
 };
 
 /**
+ * Get list of patients
+ * Restriction: me
+ */
+exports.patients = function (req, res) {
+	User.find({
+		_id: {
+			$ne: req.user._id
+		},
+		type: "patient"
+	}, '-salt -hashedPassword', function (err, users) {
+		if (err) {
+			return res.send(500, err);
+		}
+		res.json(200, users);
+	});
+};
+
+/**
  * Authentication callback
  */
 exports.authCallback = function (req, res, next) {

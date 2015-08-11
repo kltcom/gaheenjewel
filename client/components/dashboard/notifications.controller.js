@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('gaheenApp').controller('NotificationCtrl', function ($scope, $location, Auth) {
+angular.module('gaheenApp').controller('DashboardNotificationsCtrl', function ($scope, $location, Auth) {
 	$scope.getCurrentUser = Auth.getCurrentUser;
 	$scope.isAdmin = Auth.isAdmin;
 	$scope.isCollapsed = true;

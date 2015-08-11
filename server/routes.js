@@ -7,6 +7,7 @@
 var errors = require('./components/errors');
 var controller = require('./api/verificationtoken/verificationtoken.controller');
 var upload = require('./upload/upload.controller');
+var path = require('path');
 
 module.exports = function (app) {
 	// Routes
@@ -34,7 +35,7 @@ module.exports = function (app) {
 
 	// Other routes that should redirect to index.html
 	app.route('/*').get(function (req, res) {
-		res.sendfile(app.get('appPath') + '/index.html');
+		res.sendFile(path.resolve(app.get('appPath') + '/index.html'));
 	});
 
 	// Upload route
